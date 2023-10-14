@@ -28,12 +28,12 @@ public class LoginFrame extends javax.swing.JFrame {
 
         loginTextField = new javax.swing.JTextField();
         passwordTextPassword = new javax.swing.JPasswordField();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        okButtomOk = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         loginTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Login"));
-        loginTextField.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        loginTextField.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         passwordTextPassword.setBorder(javax.swing.BorderFactory.createTitledBorder("Senha"));
         passwordTextPassword.addActionListener(new java.awt.event.ActionListener() {
@@ -42,7 +42,7 @@ public class LoginFrame extends javax.swing.JFrame {
             }
         });
 
-        jToggleButton1.setText("Entrar");
+        okButtomOk.setText("Entrar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -51,7 +51,7 @@ public class LoginFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(115, 115, 115)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jToggleButton1)
+                    .addComponent(okButtomOk)
                     .addComponent(loginTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(passwordTextPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(115, Short.MAX_VALUE))
@@ -64,7 +64,7 @@ public class LoginFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(passwordTextPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jToggleButton1)
+                .addComponent(okButtomOk)
                 .addContainerGap(72, Short.MAX_VALUE))
         );
 
@@ -111,8 +111,8 @@ public class LoginFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JTextField loginTextField;
+    private javax.swing.JToggleButton okButtomOk;
     private javax.swing.JPasswordField passwordTextPassword;
     // End of variables declaration//GEN-END:variables
 }
