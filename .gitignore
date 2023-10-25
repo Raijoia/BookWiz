@@ -12,5 +12,6 @@ nbdist/
 .nb-gradle/
 properties/
 *.properties
+TestConnection.*
 
 # End of https://www.toptal.com/developers/gitignore/api/netbeans
