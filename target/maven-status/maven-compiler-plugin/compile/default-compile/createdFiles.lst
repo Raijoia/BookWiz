@@ -1,4 +1,6 @@
 com/bookwiz/bookwiz/LoginFrame$1.class
+com/bookwiz/bookwiz/ConnectionFactory.class
+com/bookwiz/bookwiz/TestConnection.class
 com/bookwiz/bookwiz/LoginFrame.class
 com/bookwiz/bookwiz/LoginFrame$2.class
 com/bookwiz/bookwiz/Bookwiz.class
