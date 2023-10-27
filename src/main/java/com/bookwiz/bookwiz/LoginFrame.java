@@ -89,7 +89,10 @@ public class LoginFrame extends javax.swing.JFrame {
         try{
             boolean conectar = usuarioDAO.verificarUsuario(login, senha);
             if (conectar) {
-                JOptionPane.showMessageDialog(null, "Bem-Vindo!!");
+                JOptionPane.showMessageDialog(null, "Bem-Vindo " + login + " !!");
+                Principal screen = new Principal();
+                screen.setVisible(true);
+                this.dispose();
             }
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "Login e/ou Senha está inválido");
