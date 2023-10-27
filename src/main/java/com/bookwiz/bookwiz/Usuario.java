@@ -9,7 +9,7 @@ package com.bookwiz.bookwiz;
  * @author rai
  */
 public class Usuario {
-    private String nome, email, sexo;
+    private String nome, email, sexo, senha;
     private int id, pref, idade;
     
     public Usuario(String nome, String email, String sexo, int id, int pref, int idade) {
@@ -18,8 +18,17 @@ public class Usuario {
         this.sexo = sexo;
         this.pref = pref;
         this.idade = idade;
+        this.senha = senha;
     }
-
+    
+    public String getSenha() {
+        return senha;
+    }
+    
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+    
     public String getNome() {
         return nome;
     }
