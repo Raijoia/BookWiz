@@ -24,26 +24,26 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="188" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="2" attributes="0">
-                  <Component id="okButtomOk" alignment="2" min="-2" max="-2" attributes="0"/>
-                  <Component id="loginTextField" alignment="2" min="-2" pref="170" max="-2" attributes="0"/>
-                  <Component id="passwordTextPassword" alignment="2" min="-2" pref="170" max="-2" attributes="0"/>
+                  <Component id="loginTextField" alignment="2" max="32767" attributes="0"/>
+                  <Component id="passwordTextPassword" alignment="2" max="32767" attributes="0"/>
+                  <Component id="okButtomOk" alignment="2" pref="293" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="115" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="187" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
-              <Component id="loginTextField" min="-2" pref="50" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="passwordTextPassword" min="-2" pref="50" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="okButtomOk" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="72" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
+              <Component id="loginTextField" min="-2" pref="82" max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Component id="passwordTextPassword" min="-2" pref="82" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="okButtomOk" min="-2" pref="23" max="-2" attributes="0"/>
+              <EmptySpace pref="95" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
