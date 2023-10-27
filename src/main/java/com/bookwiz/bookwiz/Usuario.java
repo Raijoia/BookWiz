@@ -10,7 +10,7 @@ package com.bookwiz.bookwiz;
  */
 public class Usuario {
     private String nome, email, sexo, senha;
-    private int id, pref, idade;
+    private int id, pref, idade, acesso;
     
     public Usuario(String nome,String senha, String email, String sexo, int pref, int idade) {
         this.nome = nome;
@@ -19,6 +19,14 @@ public class Usuario {
         this.sexo = sexo;
         this.pref = pref;
         this.idade = idade;
+    }
+
+    public int getAcesso() {
+        return acesso;
+    }
+
+    public void setAcesso(int acesso) {
+        this.acesso = acesso;
     }
     
     public String getSenha() {
