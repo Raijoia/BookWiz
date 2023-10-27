@@ -4,6 +4,8 @@
  */
 package com.bookwiz.bookwiz;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author koishi
@@ -43,6 +45,11 @@ public class LoginFrame extends javax.swing.JFrame {
         });
 
         okButtomOk.setText("Entrar");
+        okButtomOk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                okButtomOkActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -74,6 +81,20 @@ public class LoginFrame extends javax.swing.JFrame {
     private void passwordTextPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordTextPasswordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_passwordTextPasswordActionPerformed
+
+    private void okButtomOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtomOkActionPerformed
+        String login = loginTextField.getText();
+        String senha = new String(passwordTextPassword.getPassword());
+        var usuarioDAO = new UsuarioDAO();
+        try{
+            boolean conectar = usuarioDAO.verificarUsuario(login, senha);
+            if (conectar) {
+                JOptionPane.showMessageDialog(null, "Bem-Vindo!!");
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Login e/ou Senha está inválido");
+        }
+    }//GEN-LAST:event_okButtomOkActionPerformed
 
     /**
      * @param args the command line arguments
