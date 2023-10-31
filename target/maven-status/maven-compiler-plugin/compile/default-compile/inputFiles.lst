@@ -1,7 +1,7 @@
-/home/rai/Documentos/Projeto_A3/BookWiz/src/main/java/com/bookwiz/bookwiz/LoginFrame.java
-/home/rai/Documentos/Projeto_A3/BookWiz/src/main/java/com/bookwiz/bookwiz/Principal.java
-/home/rai/Documentos/Projeto_A3/BookWiz/src/main/java/com/bookwiz/bookwiz/TestConnection.java
-/home/rai/Documentos/Projeto_A3/BookWiz/src/main/java/com/bookwiz/bookwiz/UsuarioDAO.java
-/home/rai/Documentos/Projeto_A3/BookWiz/src/main/java/com/bookwiz/bookwiz/Bookwiz.java
-/home/rai/Documentos/Projeto_A3/BookWiz/src/main/java/com/bookwiz/bookwiz/Usuario.java
-/home/rai/Documentos/Projeto_A3/BookWiz/src/main/java/com/bookwiz/bookwiz/ConnectionFactory.java
+/home/rai/Documentos/dev/BookWiz/src/main/java/com/bookwiz/bookwiz/ConnectionFactory.java
+/home/rai/Documentos/dev/BookWiz/src/main/java/com/bookwiz/bookwiz/Bookwiz.java
+/home/rai/Documentos/dev/BookWiz/src/main/java/com/bookwiz/bookwiz/Principal.java
+/home/rai/Documentos/dev/BookWiz/src/main/java/com/bookwiz/bookwiz/TestConnection.java
+/home/rai/Documentos/dev/BookWiz/src/main/java/com/bookwiz/bookwiz/UsuarioDAO.java
+/home/rai/Documentos/dev/BookWiz/src/main/java/com/bookwiz/bookwiz/Usuario.java
+/home/rai/Documentos/dev/BookWiz/src/main/java/com/bookwiz/bookwiz/LoginFrame.java

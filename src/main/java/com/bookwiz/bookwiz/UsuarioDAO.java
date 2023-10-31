@@ -23,8 +23,9 @@ public class UsuarioDAO {
             
             
             ResultSet rs = ps.executeQuery();
-            rs.next();
-                    
+            if(!rs.next()) {
+                return false;
+            }
             String dbUsuario = rs.getString("USU_NOME");
             String dbSenha = rs.getString("USU_SENHA");
             

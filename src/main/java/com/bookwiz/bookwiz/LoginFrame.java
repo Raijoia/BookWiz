@@ -93,9 +93,11 @@ public class LoginFrame extends javax.swing.JFrame {
                 Principal screen = new Principal();
                 screen.setVisible(true);
                 this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(null, "Login e/ou Senha está inválido");
             }
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Login e/ou Senha está inválido");
+            JOptionPane.showMessageDialog(null, "Error " + ex.getMessage());
         }
     }//GEN-LAST:event_okButtomOkActionPerformed
 
