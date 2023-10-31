@@ -30,6 +30,7 @@
                   <Component id="passwordTextPassword" alignment="2" max="32767" attributes="0"/>
                   <Component id="okButtomOk" alignment="2" max="32767" attributes="0"/>
                   <Component id="sairButtomSair" alignment="2" min="-2" pref="293" max="-2" attributes="0"/>
+                  <Component id="jLabel1" alignment="2" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="187" max="-2" attributes="0"/>
           </Group>
@@ -38,7 +39,9 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="loginTextField" min="-2" pref="82" max="-2" attributes="0"/>
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Component id="passwordTextPassword" min="-2" pref="82" max="-2" attributes="0"/>
@@ -91,6 +94,11 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sairButtomSairActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Bem-Vindo ao BookWiz!!"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
