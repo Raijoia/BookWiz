@@ -31,6 +31,7 @@ public class LoginFrame extends javax.swing.JFrame {
         loginTextField = new javax.swing.JTextField();
         passwordTextPassword = new javax.swing.JPasswordField();
         okButtomOk = new javax.swing.JToggleButton();
+        sairButtomSair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,6 +52,13 @@ public class LoginFrame extends javax.swing.JFrame {
             }
         });
 
+        sairButtomSair.setText("Sair");
+        sairButtomSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sairButtomSairActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -60,7 +68,8 @@ public class LoginFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(loginTextField)
                     .addComponent(passwordTextPassword)
-                    .addComponent(okButtomOk, javax.swing.GroupLayout.DEFAULT_SIZE, 293, Short.MAX_VALUE))
+                    .addComponent(okButtomOk, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(sairButtomSair, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(187, 187, 187))
         );
         layout.setVerticalGroup(
@@ -72,7 +81,9 @@ public class LoginFrame extends javax.swing.JFrame {
                 .addComponent(passwordTextPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(okButtomOk, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(95, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(sairButtomSair, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(66, Short.MAX_VALUE))
         );
 
         pack();
@@ -100,6 +111,10 @@ public class LoginFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Error " + ex.getMessage());
         }
     }//GEN-LAST:event_okButtomOkActionPerformed
+
+    private void sairButtomSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairButtomSairActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_sairButtomSairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -140,5 +155,6 @@ public class LoginFrame extends javax.swing.JFrame {
     private javax.swing.JTextField loginTextField;
     private javax.swing.JToggleButton okButtomOk;
     private javax.swing.JPasswordField passwordTextPassword;
+    private javax.swing.JButton sairButtomSair;
     // End of variables declaration//GEN-END:variables
 }
