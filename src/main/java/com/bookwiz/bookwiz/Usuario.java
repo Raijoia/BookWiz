@@ -12,6 +12,15 @@ public class Usuario {
     private String nome, email, sexo, senha;
     private int id, pref, idade, acesso, ativo;
     
+    public Usuario(String nome, String senha, String email, String sexo, int pref, int idade){
+        this.nome = nome;
+        this.senha = senha;
+        this.email = email;
+        this.sexo = sexo;
+        this.pref = pref;
+        this.idade = idade;
+    }
+    
     public Usuario(String nome,String senha, String email, String sexo, int pref, int idade, int acesso, int ativo, int id) {
         this.nome = nome;
         this.senha = senha;
