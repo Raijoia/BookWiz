@@ -11,8 +11,8 @@ import java.sql.ResultSet;
  * @author rai
  */
 public class UsuarioDAO {
-    public boolean verificarUsuario(String usuario, String senha) throws Exception{
-        String sql = "SELECT USU_NOME, USU_SENHA FROM TB_USER WHERE USU_NOME = ? && USU_SENHA = ?;";
+    public Usuario verificarUsuario(String usuario, String senha) throws Exception{
+        String sql = "SELECT USU_NOME, USU_SENHA, USU_EMAIL, USU_SEXO, USU_PREF, USU_IDADE, TP_ID, USU_ATIVO, USU_ID FROM TB_USER WHERE USU_NOME = ? && USU_SENHA = ?;";
         
         try (
             var factory = ConnectionFactory.conectar();
@@ -24,12 +24,22 @@ public class UsuarioDAO {
             
             ResultSet rs = ps.executeQuery();
             if(!rs.next()) {
-                return false;
+                return null;
             }
-            String dbUsuario = rs.getString("USU_NOME");
-            String dbSenha = rs.getString("USU_SENHA");
             
-            return dbUsuario.equals(usuario) && dbSenha.equals(senha);
+            var usuarioReconhecido = new Usuario(
+                rs.getString("USU_NOME"),
+                rs.getString("USU_SENHA"),
+                rs.getString("USU_EMAIL"),
+                rs.getString("USU_SEXO"),
+                rs.getInt("USU_PREF"),
+                rs.getInt("USU_IDADE"),
+                rs.getInt("TP_ID"),
+                rs.getInt("USU_ATIVO"),
+                rs.getInt("USU_ID")
+            );
+            
+            return usuarioReconhecido;
         }
     }
 }
