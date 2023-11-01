@@ -9,6 +9,7 @@ com/bookwiz/bookwiz/Principal.class
 com/bookwiz/bookwiz/TestConnection.class
 com/bookwiz/bookwiz/Usuario.class
 com/bookwiz/bookwiz/LoginFrame.class
+com/bookwiz/bookwiz/AdminFrame$2.class
 com/bookwiz/bookwiz/Principal$1.class
 com/bookwiz/bookwiz/LoginFrame$4.class
 com/bookwiz/bookwiz/ConnectionFactory.class
