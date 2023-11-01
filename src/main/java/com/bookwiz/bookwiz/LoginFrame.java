@@ -104,15 +104,34 @@ public class LoginFrame extends javax.swing.JFrame {
         String senha = new String(passwordTextPassword.getPassword());
         var usuarioDAO = new UsuarioDAO();
         try{
-            boolean conectar = usuarioDAO.verificarUsuario(login, senha);
-            if (conectar) {
-                JOptionPane.showMessageDialog(null, "Bem-Vindo " + login + " !!");
-                Principal screen = new Principal();
-                screen.setVisible(true);
-                this.dispose();
-            } else {
+            var usuario = usuarioDAO.verificarUsuario(login, senha);
+            if (usuario == null) {
                 JOptionPane.showMessageDialog(null, "Login e/ou Senha está inválido");
+            } else {
+                if (usuario.getAtivo() == 1){
+                    JOptionPane.showMessageDialog(null, "Bem-Vindo " + usuario.getNome() + "!!");
+                    int acesso = usuario.getAcesso();
+                    switch(acesso){
+                        case 1: {
+                            AdminFrame screenAdm = new AdminFrame();
+                            screenAdm.setVisible(true);
+                            this.dispose();
+                            break;
+                        }
+                        
+                        case 2: {
+                            Principal screenPrincipal = new Principal();
+                            screenPrincipal.setVisible(true);
+                            this.dispose();
+                            break;
+                        }
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "Essa conta foi desativada\nEntre em contato com um administrador caso queira ativa-lá");
+                }
             }
+            
+            
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "Error " + ex.getMessage());
         }
