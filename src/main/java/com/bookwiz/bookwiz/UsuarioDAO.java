@@ -5,6 +5,7 @@
 package com.bookwiz.bookwiz;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  *
@@ -40,6 +41,24 @@ public class UsuarioDAO {
             );
             
             return usuarioReconhecido;
+        }
+    }
+    
+    public void adicionarUsuario(Usuario user) throws SQLException, Exception {
+        String sql = "INSERT INTO TB_USER (USU_NOME, USU_SENHA, USU_IDADE, USU_SEXO, USU_EMAIL, USU_PREF, TP_ID) VALUES (?, ?, ?, ?, ?, ?, 2);";
+        
+        try (
+            var factory = ConnectionFactory.conectar();
+            var ps = factory.prepareStatement(sql);
+        ){
+            ps.setString(1, user.getNome());
+            ps.setString(2, user.getSenha());
+            ps.setInt(3, user.getIdade());
+            ps.setString(4, user.getSexo());
+            ps.setString(5, user.getEmail());
+            ps.setInt(6, user.getPref());
+            
+            ps.execute();
         }
     }
 }
