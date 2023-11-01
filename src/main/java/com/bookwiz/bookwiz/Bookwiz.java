@@ -11,6 +11,10 @@ package com.bookwiz.bookwiz;
 public class Bookwiz {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new LoginFrame().setVisible(true);
+            }
+        });
     }
 }
