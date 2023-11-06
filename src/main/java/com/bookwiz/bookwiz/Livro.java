@@ -10,7 +10,15 @@ package com.bookwiz.bookwiz;
  */
 public class Livro {
     private String titulo, autor, dtcad, desc;
-    private int id;
+    private int id, nota;
+
+    public int getNota() {
+        return nota;
+    }
+
+    public void setNota(int nota) {
+        this.nota = nota;
+    }
 
     public String getTitulo() {
         return titulo;
