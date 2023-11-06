@@ -120,7 +120,7 @@ public class LoginFrame extends javax.swing.JFrame {
                         }
                         
                         case 2: {
-                            Principal screenPrincipal = new Principal();
+                            MenuFrame screenPrincipal = new MenuFrame();
                             screenPrincipal.setVisible(true);
                             this.dispose();
                             break;
