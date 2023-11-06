@@ -6,8 +6,10 @@ com\bookwiz\bookwiz\LoginFrame$1.class
 com\bookwiz\bookwiz\LoginFrame$2.class
 com\bookwiz\bookwiz\AdminFrame.class
 com\bookwiz\bookwiz\LoginFrame$3.class
+com\bookwiz\bookwiz\Livro.class
 com\bookwiz\bookwiz\ConnectionFactory.class
 com\bookwiz\bookwiz\LoginFrame.class
+com\bookwiz\bookwiz\LivroDAO.class
 com\bookwiz\bookwiz\Usuario.class
 com\bookwiz\bookwiz\LoginFrame$4.class
 com\bookwiz\bookwiz\Bookwiz$1.class

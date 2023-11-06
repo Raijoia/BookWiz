@@ -4,6 +4,8 @@
  */
 package com.bookwiz.bookwiz;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author rai
@@ -26,11 +28,16 @@ public class MenuFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        addLivroButtonLivro = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("Adicionar novo Livro");
+        addLivroButtonLivro.setText("Adicionar novo Livro");
+        addLivroButtonLivro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addLivroButtonLivroActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -38,19 +45,36 @@ public class MenuFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(106, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(addLivroButtonLivro, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(101, 101, 101))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(68, 68, 68)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(addLivroButtonLivro, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(178, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void addLivroButtonLivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addLivroButtonLivroActionPerformed
+        try {
+            String titulo = JOptionPane.showInputDialog("Digite o titulo do novo livro");
+            String autor = JOptionPane.showInputDialog("Digite o autor do novo livro");
+            int genero = Integer.parseInt(JOptionPane.showInputDialog("Qual o gênero do livro?\n1 - Romance\n2 - Ficção\n3 - Técnico"));
+            String desc = JOptionPane.showInputDialog("Digite uma breve descrição sobre o livro");
+            int nota = Integer.parseInt(JOptionPane.showInputDialog("Dê uma nota de 0 a 10 para o livro"));
+
+            var livroNovo = new Livro(titulo, autor, desc, genero, nota);
+            var livroDAO = new LivroDAO();
+            livroDAO.adicionarLivro(livroNovo);
+            JOptionPane.showMessageDialog(null, "Livro novo adicionado com sucesso");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error " + e);
+        }
+    }//GEN-LAST:event_addLivroButtonLivroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -88,6 +112,6 @@ public class MenuFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton addLivroButtonLivro;
     // End of variables declaration//GEN-END:variables
 }
