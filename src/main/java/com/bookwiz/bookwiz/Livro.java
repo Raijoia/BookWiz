@@ -6,8 +6,49 @@ package com.bookwiz.bookwiz;
 
 /**
  *
- * @author 82318841
+ * @author rai
  */
 public class Livro {
-    
+    private String titulo, autor, dtcad, desc;
+    private int id;
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    public String getDtcad() {
+        return dtcad;
+    }
+
+    public void setDtcad(String dtcad) {
+        this.dtcad = dtcad;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }
