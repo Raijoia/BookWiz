@@ -10,7 +10,23 @@ package com.bookwiz.bookwiz;
  */
 public class Livro {
     private String titulo, autor, dtcad, desc;
-    private int id, nota;
+    private int id, nota, genero;
+    
+    public Livro (String titulo, String autor, String desc, int genero, int nota) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.desc = desc;
+        this.genero = genero;
+        this.nota = nota;
+    }
+
+    public int getGenero() {
+        return genero;
+    }
+
+    public void setGenero(int genero) {
+        this.genero = genero;
+    }
 
     public int getNota() {
         return nota;
