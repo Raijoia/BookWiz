@@ -10,14 +10,13 @@ package com.bookwiz.bookwiz;
  */
 public class Livro {
     private String titulo, autor, dtcad, desc;
-    private int id, nota, genero;
+    private int id, genero;
     
-    public Livro (String titulo, String autor, String desc, int genero, int nota) {
+    public Livro (String titulo, String autor, String desc, int genero) {
         this.titulo = titulo;
         this.autor = autor;
         this.desc = desc;
         this.genero = genero;
-        this.nota = nota;
     }
 
     public int getGenero() {
@@ -26,14 +25,6 @@ public class Livro {
 
     public void setGenero(int genero) {
         this.genero = genero;
-    }
-
-    public int getNota() {
-        return nota;
-    }
-
-    public void setNota(int nota) {
-        this.nota = nota;
     }
 
     public String getTitulo() {
