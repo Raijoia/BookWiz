@@ -18,7 +18,13 @@ public class MenuFrame extends javax.swing.JFrame {
     public MenuFrame() {
         initComponents();
     }
-
+    
+    Usuario usuario;
+    
+    public void transferirUsuario(Usuario user) {
+        usuario = user;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -65,9 +71,8 @@ public class MenuFrame extends javax.swing.JFrame {
             String autor = JOptionPane.showInputDialog("Digite o autor do novo livro");
             int genero = Integer.parseInt(JOptionPane.showInputDialog("Qual o gênero do livro?\n1 - Romance\n2 - Ficção\n3 - Técnico"));
             String desc = JOptionPane.showInputDialog("Digite uma breve descrição sobre o livro");
-            int nota = Integer.parseInt(JOptionPane.showInputDialog("Dê uma nota de 0 a 10 para o livro"));
 
-            var livroNovo = new Livro(titulo, autor, desc, genero, nota);
+            var livroNovo = new Livro(titulo, autor, desc, genero);
             var livroDAO = new LivroDAO();
             livroDAO.adicionarLivro(livroNovo);
             JOptionPane.showMessageDialog(null, "Livro novo adicionado com sucesso");
