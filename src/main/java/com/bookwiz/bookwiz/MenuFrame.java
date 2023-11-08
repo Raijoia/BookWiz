@@ -72,10 +72,19 @@ public class MenuFrame extends javax.swing.JFrame {
             String autor = JOptionPane.showInputDialog("Digite o autor do novo livro");
             int genero = Integer.parseInt(JOptionPane.showInputDialog("Qual o gênero do livro?\n1 - Romance\n2 - Ficção\n3 - Técnico"));
             String desc = JOptionPane.showInputDialog("Digite uma breve descrição sobre o livro");
+            int nota = Integer.parseInt(JOptionPane.showInputDialog("Dê uma nota de 0 a 10 para o livro"));
+            if(nota < 0 || nota > 30){
+                nota = Integer.parseInt(JOptionPane.showInputDialog("nota inserida é invalido, digite novamente uma nota entre 0 a 10"));
+            }
 
             var livroNovo = new Livro(titulo, autor, desc, genero);
             var livroDAO = new LivroDAO();
             livroDAO.adicionarLivro(livroNovo);
+            
+            var notaLivro = new Nota(nota);
+            var notaDAO = new NotaDAO();
+            notaDAO.adicionarNota(notaLivro, usuario, livroNovo);
+            
             JOptionPane.showMessageDialog(null, "Livro novo adicionado com sucesso");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error " + e);

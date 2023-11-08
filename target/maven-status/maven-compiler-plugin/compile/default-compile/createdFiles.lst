@@ -7,6 +7,7 @@ com/bookwiz/bookwiz/Bookwiz.class
 com/bookwiz/bookwiz/AdminFrame.class
 com/bookwiz/bookwiz/MenuFrame$1.class
 com/bookwiz/bookwiz/MenuFrame.class
+com/bookwiz/bookwiz/Nota.class
 com/bookwiz/bookwiz/TestConnection.class
 com/bookwiz/bookwiz/Usuario.class
 com/bookwiz/bookwiz/LoginFrame.class
@@ -16,4 +17,5 @@ com/bookwiz/bookwiz/LivroDAO.class
 com/bookwiz/bookwiz/ConnectionFactory.class
 com/bookwiz/bookwiz/MenuFrame$2.class
 com/bookwiz/bookwiz/LoginFrame$3.class
+com/bookwiz/bookwiz/NotaDAO.class
 com/bookwiz/bookwiz/Bookwiz$1.class
