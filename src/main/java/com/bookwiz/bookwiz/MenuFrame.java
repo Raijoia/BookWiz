@@ -11,6 +11,8 @@ import javax.swing.JOptionPane;
  * @author rai
  */
 public class MenuFrame extends javax.swing.JFrame {
+    
+    Usuario usuario;
 
     /**
      * Creates new form Principal
@@ -19,10 +21,9 @@ public class MenuFrame extends javax.swing.JFrame {
         initComponents();
     }
     
-    Usuario usuario;
-    
-    public void transferirUsuario(Usuario user) {
-        usuario = user;
+    public MenuFrame(Usuario usuario) {
+        this();
+        this.usuario = usuario;
     }
     
     /**

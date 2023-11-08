@@ -120,8 +120,7 @@ public class LoginFrame extends javax.swing.JFrame {
                         }
                         
                         case 2: {
-                            MenuFrame screenPrincipal = new MenuFrame();
-                            screenPrincipal.transferirUsuario(usuario);
+                            MenuFrame screenPrincipal = new MenuFrame(usuario);
                             screenPrincipal.setVisible(true);
                             this.dispose();
                             break;
