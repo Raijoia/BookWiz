@@ -4,6 +4,7 @@
 
 package com.bookwiz.bookwiz;
 
+import com.bookwiz.bookwiz.screens.LoginFrame;
 import com.formdev.flatlaf.FlatDarkLaf;
 
 /**

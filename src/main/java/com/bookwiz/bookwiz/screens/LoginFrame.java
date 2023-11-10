@@ -2,8 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.bookwiz.bookwiz;
+package com.bookwiz.bookwiz.screens;
 
+import com.bookwiz.bookwiz.MenuFrame;
+import com.bookwiz.bookwiz.UsuarioDAO;
 import com.bookwiz.bookwiz.screens.AdminFrame;
 import javax.swing.JOptionPane;
 
@@ -36,9 +38,15 @@ public class LoginFrame extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         loginTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Login"));
-        loginTextField.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        loginTextField.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        loginTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginTextFieldActionPerformed(evt);
+            }
+        });
 
         passwordTextPassword.setBorder(javax.swing.BorderFactory.createTitledBorder("Senha"));
         passwordTextPassword.addActionListener(new java.awt.event.ActionListener() {
@@ -68,32 +76,29 @@ public class LoginFrame extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(188, 188, 188)
+                .addContainerGap(54, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(loginTextField)
-                    .addComponent(passwordTextPassword)
-                    .addComponent(okButtomOk, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(sairButtomSair, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(187, 187, 187))
-            .addGroup(javax.swing.GroupLayout.Alignment.CENTER, layout.createSequentialGroup()
-                .addGap(255, 255, 255)
-                .addComponent(jLabel1)
-                .addGap(255, 255, 255))
+                    .addComponent(loginTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 487, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(passwordTextPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 487, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(okButtomOk, javax.swing.GroupLayout.PREFERRED_SIZE, 487, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sairButtomSair, javax.swing.GroupLayout.PREFERRED_SIZE, 487, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(54, 54, 54))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addComponent(jLabel1)
+                .addGap(104, 104, 104)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
+                .addGap(67, 67, 67)
+                .addComponent(loginTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(loginTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(passwordTextPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(passwordTextPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                .addGap(26, 26, 26)
+                .addComponent(okButtomOk, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(okButtomOk, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(sairButtomSair, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addComponent(sairButtomSair, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
+                .addGap(154, 154, 154))
         );
 
         pack();
@@ -144,6 +149,10 @@ public class LoginFrame extends javax.swing.JFrame {
     private void sairButtomSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairButtomSairActionPerformed
         this.dispose();
     }//GEN-LAST:event_sairButtomSairActionPerformed
+
+    private void loginTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_loginTextFieldActionPerformed
 
     /**
      * @param args the command line arguments
