@@ -2,8 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.bookwiz.bookwiz;
+package com.bookwiz.bookwiz.screens;
 
+import com.bookwiz.bookwiz.Usuario;
+import com.bookwiz.bookwiz.UsuarioDAO;
 import javax.swing.JOptionPane;
 
 /**
@@ -11,12 +13,18 @@ import javax.swing.JOptionPane;
  * @author rai
  */
 public class AdminFrame extends javax.swing.JFrame {
+    
+    Usuario usuario;
 
     /**
      * Creates new form AdminFrame
      */
     public AdminFrame() {
         initComponents();
+    }
+    
+    public AdminFrame(Usuario usuario){
+        this.usuario = usuario;
     }
 
     /**

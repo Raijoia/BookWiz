@@ -4,6 +4,7 @@
  */
 package com.bookwiz.bookwiz;
 
+import com.bookwiz.bookwiz.screens.AdminFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -116,7 +117,7 @@ public class LoginFrame extends javax.swing.JFrame {
                     int acesso = usuario.getAcesso();
                     switch(acesso){
                         case 1: {
-                            AdminFrame screenAdm = new AdminFrame();
+                            AdminFrame screenAdm = new AdminFrame(usuario);
                             screenAdm.setVisible(true);
                             this.dispose();
                             break;
