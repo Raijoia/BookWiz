@@ -108,21 +108,9 @@ public class AdminFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addUserButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addUserButtonActionPerformed
-        try {
-            String usuario = JOptionPane.showInputDialog("Digite o user do usuario novo");
-            String senha = JOptionPane.showInputDialog("Digite a senha do usuario novo");
-            int idade = Integer.parseInt(JOptionPane.showInputDialog("Digite a idade do usuario novo"));
-            String email = JOptionPane.showInputDialog("Digite o email do usuario novo");
-            String sexo = JOptionPane.showInputDialog("Digite o sexo do usuario novo");
-            int pref = Integer.parseInt(JOptionPane.showInputDialog("Digite o genero preferido do usuario novo\n1 - comédia\n2 - terror"));
-
-            var usuarioNovo = new Usuario(usuario, senha, email, sexo, pref, idade);
-            var usuarioDAO = new UsuarioDAO();
-            usuarioDAO.adicionarUsuario(usuarioNovo);
-            JOptionPane.showMessageDialog(null, "Usuario novo adicionado com sucesso");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error " + e);
-        }
+        AdicionarUsuarioFrame screen = new AdicionarUsuarioFrame(usuario);
+        this.dispose();
+        screen.setVisible(true);
     }//GEN-LAST:event_addUserButtonActionPerformed
 
     private void verUsuarioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verUsuarioButtonActionPerformed
