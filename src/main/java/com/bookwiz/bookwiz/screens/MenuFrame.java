@@ -36,6 +36,7 @@ public class MenuFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         addLivroButtonLivro = new javax.swing.JButton();
+        verLivrosButton = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,21 +47,32 @@ public class MenuFrame extends javax.swing.JFrame {
             }
         });
 
+        verLivrosButton.setText("Ver livros");
+        verLivrosButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verLivrosButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(106, Short.MAX_VALUE)
-                .addComponent(addLivroButtonLivro, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(101, 101, 101))
+                .addGap(161, 161, 161)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(verLivrosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addLivroButtonLivro, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(160, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(68, 68, 68)
-                .addComponent(addLivroButtonLivro, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(178, Short.MAX_VALUE))
+                .addGap(215, 215, 215)
+                .addComponent(addLivroButtonLivro, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(verLivrosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(215, Short.MAX_VALUE))
         );
 
         pack();
@@ -90,6 +102,10 @@ public class MenuFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Error " + e);
         }
     }//GEN-LAST:event_addLivroButtonLivroActionPerformed
+
+    private void verLivrosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verLivrosButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_verLivrosButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -128,5 +144,6 @@ public class MenuFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addLivroButtonLivro;
+    private javax.swing.JToggleButton verLivrosButton;
     // End of variables declaration//GEN-END:variables
 }
