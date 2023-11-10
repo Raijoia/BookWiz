@@ -24,6 +24,7 @@ public class AdminFrame extends javax.swing.JFrame {
     }
     
     public AdminFrame(Usuario usuario){
+        this();
         this.usuario = usuario;
     }
 
@@ -39,6 +40,8 @@ public class AdminFrame extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         addUserButton = new javax.swing.JButton();
+        verUsuarioButton = new javax.swing.JButton();
+        sairButtonSair = new javax.swing.JToggleButton();
 
         jLabel1.setText("jLabel1");
 
@@ -53,28 +56,52 @@ public class AdminFrame extends javax.swing.JFrame {
             }
         });
 
+        verUsuarioButton.setText("Ver usuarios");
+        verUsuarioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verUsuarioButtonActionPerformed(evt);
+            }
+        });
+
+        sairButtonSair.setText("Sair");
+        sairButtonSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sairButtonSairActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(273, 273, 273)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(155, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(278, 278, 278)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(154, 154, 154)
-                        .addComponent(addUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(168, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(addUserButton, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                            .addComponent(verUsuarioButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(145, 145, 145))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(sairButtonSair, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(47, 47, 47)
+                .addGap(183, 183, 183)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(addUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(287, Short.MAX_VALUE))
+                .addGap(49, 49, 49)
+                .addComponent(addUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addComponent(verUsuarioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 133, Short.MAX_VALUE)
+                .addComponent(sairButtonSair, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -97,6 +124,14 @@ public class AdminFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Error " + e);
         }
     }//GEN-LAST:event_addUserButtonActionPerformed
+
+    private void verUsuarioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verUsuarioButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_verUsuarioButtonActionPerformed
+
+    private void sairButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairButtonSairActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_sairButtonSairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -137,5 +172,7 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JButton addUserButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JToggleButton sairButtonSair;
+    private javax.swing.JButton verUsuarioButton;
     // End of variables declaration//GEN-END:variables
 }
