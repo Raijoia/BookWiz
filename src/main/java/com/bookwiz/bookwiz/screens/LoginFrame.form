@@ -30,9 +30,13 @@
                   <Component id="passwordTextPassword" alignment="2" max="32767" attributes="0"/>
                   <Component id="okButtomOk" alignment="2" max="32767" attributes="0"/>
                   <Component id="sairButtomSair" alignment="2" min="-2" pref="293" max="-2" attributes="0"/>
-                  <Component id="jLabel1" alignment="2" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="187" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="2" attributes="0">
+              <EmptySpace min="255" pref="255" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="255" pref="255" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
