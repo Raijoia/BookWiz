@@ -134,6 +134,8 @@ public class AdicionarUsuarioFrame extends javax.swing.JFrame {
 
     private void voltarButtonVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarButtonVoltarActionPerformed
         this.dispose();
+        AdminFrame screen = new AdminFrame(usuario);
+        screen.setVisible(true);
     }//GEN-LAST:event_voltarButtonVoltarActionPerformed
 
     private void loginTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginTextFieldActionPerformed
