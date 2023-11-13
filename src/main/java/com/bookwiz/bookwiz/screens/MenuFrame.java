@@ -2,9 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.bookwiz.bookwiz;
+package com.bookwiz.bookwiz.screens;
 
-import javax.swing.JOptionPane;
+import com.bookwiz.bookwiz.Usuario;
+import com.bookwiz.bookwiz.screens.AdicionarLivroFrame;
 
 /**
  *
@@ -79,28 +80,9 @@ public class MenuFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addLivroButtonLivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addLivroButtonLivroActionPerformed
-        try {
-            String titulo = JOptionPane.showInputDialog("Digite o titulo do novo livro");
-            String autor = JOptionPane.showInputDialog("Digite o autor do novo livro");
-            int genero = Integer.parseInt(JOptionPane.showInputDialog("Qual o gênero do livro?\n1 - Romance\n2 - Ficção\n3 - Técnico"));
-            String desc = JOptionPane.showInputDialog("Digite uma breve descrição sobre o livro");
-            int nota = Integer.parseInt(JOptionPane.showInputDialog("Dê uma nota de 0 a 10 para o livro"));
-            if(nota < 0 || nota > 30){
-                nota = Integer.parseInt(JOptionPane.showInputDialog("nota inserida é invalido, digite novamente uma nota entre 0 a 10"));
-            }
-
-            var livroNovo = new Livro(titulo, autor, desc, genero);
-            var livroDAO = new LivroDAO();
-            livroDAO.adicionarLivro(livroNovo);
-            
-            var notaLivro = new Nota(nota);
-            var notaDAO = new NotaDAO();
-            notaDAO.adicionarNota(notaLivro, usuario, livroNovo);
-            
-            JOptionPane.showMessageDialog(null, "Livro novo adicionado com sucesso");
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error " + e);
-        }
+        this.dispose();
+        AdicionarLivroFrame screen = new AdicionarLivroFrame(usuario);
+        screen.setVisible(true);
     }//GEN-LAST:event_addLivroButtonLivroActionPerformed
 
     private void verLivrosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verLivrosButtonActionPerformed

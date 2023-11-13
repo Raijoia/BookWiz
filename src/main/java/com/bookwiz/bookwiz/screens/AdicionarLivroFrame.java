@@ -4,8 +4,12 @@
  */
 package com.bookwiz.bookwiz.screens;
 
-import com.bookwiz.bookwiz.MenuFrame;
+import com.bookwiz.bookwiz.Livro;
+import com.bookwiz.bookwiz.LivroDAO;
+import com.bookwiz.bookwiz.Nota;
+import com.bookwiz.bookwiz.NotaDAO;
 import com.bookwiz.bookwiz.Usuario;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -35,26 +39,29 @@ public class AdicionarLivroFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        tituloButton = new javax.swing.JTextField();
-        autorButton = new javax.swing.JTextField();
-        generoButton = new javax.swing.JTextField();
-        descricaoButton = new javax.swing.JTextField();
-        notaButton = new javax.swing.JTextField();
+        tituloTextField = new javax.swing.JTextField();
+        autorTextField = new javax.swing.JTextField();
+        generoTextField = new javax.swing.JTextField();
+        descricaoTextField = new javax.swing.JTextField();
+        notaTextField = new javax.swing.JTextField();
         AdicionarLivroLabel = new javax.swing.JLabel();
         voltarButtonVoltar = new javax.swing.JButton();
         addButtonAdd = new javax.swing.JButton();
+        romanceLabel = new javax.swing.JLabel();
+        ficcaoLabel = new javax.swing.JLabel();
+        tecnicoLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        tituloButton.setBorder(javax.swing.BorderFactory.createTitledBorder("Titulo"));
+        tituloTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Titulo"));
 
-        autorButton.setBorder(javax.swing.BorderFactory.createTitledBorder("Autor"));
+        autorTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Autor"));
 
-        generoButton.setBorder(javax.swing.BorderFactory.createTitledBorder("Genero"));
+        generoTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Genero"));
 
-        descricaoButton.setBorder(javax.swing.BorderFactory.createTitledBorder("Descrição"));
+        descricaoTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Descrição"));
 
-        notaButton.setBorder(javax.swing.BorderFactory.createTitledBorder("Nota"));
+        notaTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Nota"));
 
         AdicionarLivroLabel.setText("Adicionar novo livro");
 
@@ -66,54 +73,85 @@ public class AdicionarLivroFrame extends javax.swing.JFrame {
         });
 
         addButtonAdd.setText("Adicionar ");
+        addButtonAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addButtonAddActionPerformed(evt);
+            }
+        });
+
+        romanceLabel.setText("1 - Romance");
+
+        ficcaoLabel.setText("2 - Ficção");
+
+        tecnicoLabel.setText("3 - Técnico");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(AdicionarLivroLabel)
-                .addGap(251, 251, 251))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(descricaoButton, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-                    .addComponent(notaButton)
-                    .addComponent(generoButton)
-                    .addComponent(autorButton)
-                    .addComponent(tituloButton))
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
+                        .addGap(231, 231, 231)
+                        .addComponent(AdicionarLivroLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(21, 21, 21))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
                         .addComponent(voltarButtonVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(222, 222, 222)
-                        .addComponent(addButtonAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(221, Short.MAX_VALUE))
+                        .addGap(223, 223, 223)
+                        .addComponent(addButtonAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(223, 223, 223))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(164, 164, 164)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(tituloTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(notaTextField)
+                            .addComponent(descricaoTextField)
+                            .addComponent(generoTextField)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(romanceLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ficcaoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tecnicoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(57, 57, 57))
+                            .addComponent(autorTextField))
+                        .addGap(164, 164, 164))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(84, Short.MAX_VALUE)
-                .addComponent(AdicionarLivroLabel)
+                .addGap(37, 37, 37)
+                .addComponent(AdicionarLivroLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(24, 24, 24)
+                .addComponent(tituloTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tituloButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(autorTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(autorButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(romanceLabel)
+                    .addComponent(ficcaoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(tecnicoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(generoTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(generoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(descricaoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(notaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(addButtonAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
-                .addComponent(voltarButtonVoltar)
-                .addGap(16, 16, 16))
+                .addComponent(descricaoTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(voltarButtonVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(16, 16, 16))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(notaTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(addButtonAdd, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                        .addGap(102, 102, 102))))
         );
 
         pack();
@@ -124,6 +162,34 @@ public class AdicionarLivroFrame extends javax.swing.JFrame {
         this.dispose();
         screen.setVisible(true);
     }//GEN-LAST:event_voltarButtonVoltarActionPerformed
+
+    private void addButtonAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonAddActionPerformed
+        try {
+            String titulo = tituloTextField.getText();
+            String autor = autorTextField.getText();
+            int genero = Integer.parseInt(generoTextField.getText());
+            String desc = descricaoTextField.getText();
+            int nota = Integer.parseInt(notaTextField.getText());
+            if(nota < 0 || nota > 10){
+                nota = Integer.parseInt(JOptionPane.showInputDialog("nota inserida é invalido, digite novamente uma nota entre 0 a 10"));
+            }
+
+            var livroNovo = new Livro(titulo, autor, desc, genero);
+            var livroDAO = new LivroDAO();
+            livroDAO.adicionarLivro(livroNovo);
+            
+            var notaLivro = new Nota(nota);
+            var notaDAO = new NotaDAO();
+            notaDAO.adicionarNota(notaLivro, usuario, livroNovo);
+            
+            JOptionPane.showMessageDialog(null, "Livro novo adicionado com sucesso");
+            this.dispose();
+            MenuFrame screen = new MenuFrame(usuario);
+            screen.setVisible(true);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error " + e);
+        }
+    }//GEN-LAST:event_addButtonAddActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,11 +229,14 @@ public class AdicionarLivroFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AdicionarLivroLabel;
     private javax.swing.JButton addButtonAdd;
-    private javax.swing.JTextField autorButton;
-    private javax.swing.JTextField descricaoButton;
-    private javax.swing.JTextField generoButton;
-    private javax.swing.JTextField notaButton;
-    private javax.swing.JTextField tituloButton;
+    private javax.swing.JTextField autorTextField;
+    private javax.swing.JTextField descricaoTextField;
+    private javax.swing.JLabel ficcaoLabel;
+    private javax.swing.JTextField generoTextField;
+    private javax.swing.JTextField notaTextField;
+    private javax.swing.JLabel romanceLabel;
+    private javax.swing.JLabel tecnicoLabel;
+    private javax.swing.JTextField tituloTextField;
     private javax.swing.JButton voltarButtonVoltar;
     // End of variables declaration//GEN-END:variables
 }
