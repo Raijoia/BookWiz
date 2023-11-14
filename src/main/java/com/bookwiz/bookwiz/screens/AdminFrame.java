@@ -24,6 +24,7 @@ public class AdminFrame extends javax.swing.JFrame {
     public AdminFrame(Usuario usuario){
         this();
         this.usuario = usuario;
+        setLocationRelativeTo(null);
     }
 
     /**

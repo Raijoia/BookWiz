@@ -29,6 +29,7 @@ public class AdicionarLivroFrame extends javax.swing.JFrame {
     public AdicionarLivroFrame(Usuario usuario){
         this();
         this.usuario = usuario;
+        setLocationRelativeTo(null);
     }
 
     /**

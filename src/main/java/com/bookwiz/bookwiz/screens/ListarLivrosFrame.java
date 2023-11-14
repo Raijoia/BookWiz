@@ -26,6 +26,7 @@ public class ListarLivrosFrame extends javax.swing.JFrame {
     public ListarLivrosFrame(Usuario usuario) {
         this();
         buscarLivros();
+        setLocationRelativeTo(null);
     }
     
     private void buscarLivros() {

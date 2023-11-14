@@ -25,6 +25,7 @@ public class MenuFrame extends javax.swing.JFrame {
     public MenuFrame(Usuario usuario) {
         this();
         this.usuario = usuario;
+        setLocationRelativeTo(null);
     }
     
     /**

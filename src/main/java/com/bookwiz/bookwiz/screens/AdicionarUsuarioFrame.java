@@ -26,6 +26,7 @@ public class AdicionarUsuarioFrame extends javax.swing.JFrame {
     public AdicionarUsuarioFrame(Usuario usuario) {
         this();
         this.usuario = usuario;
+        setLocationRelativeTo(null);
     }
 
     /**
