@@ -4,6 +4,12 @@
  */
 package com.bookwiz.bookwiz.screens;
 
+import com.bookwiz.bookwiz.DAO.LivroDAO;
+import com.bookwiz.bookwiz.entity.Livro;
+import com.bookwiz.bookwiz.entity.Usuario;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author rai
@@ -16,6 +22,27 @@ public class listarLivrosFrame extends javax.swing.JFrame {
     public listarLivrosFrame() {
         initComponents();
     }
+    
+    public listarLivrosFrame(Usuario usuario) {
+        this();
+        buscarLivros();
+    }
+    
+    private void buscarLivros() {
+        try {
+            LivroDAO livroDAO = new LivroDAO();
+            Livro[] livros = livroDAO.obterLivros();
+            livrosComboBox.setModel(
+                    new DefaultComboBoxModel<>(livros)
+            );
+        }
+        catch (Exception e) {
+            JOptionPane.showMessageDialog(
+            null, 
+            "não encontrei lista de livros");
+            e.printStackTrace();
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,21 +53,41 @@ public class listarLivrosFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        livrosComboBox = new javax.swing.JComboBox<>();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        livrosComboBox.setSelectedIndex(-1);
+        livrosComboBox.setToolTipText("");
+        livrosComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                livrosComboBoxActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(161, Short.MAX_VALUE)
+                .addComponent(livrosComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(159, 159, 159))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addComponent(livrosComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(493, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void livrosComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_livrosComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_livrosComboBoxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +125,6 @@ public class listarLivrosFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<Livro> livrosComboBox;
     // End of variables declaration//GEN-END:variables
 }

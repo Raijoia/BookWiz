@@ -1,6 +1,7 @@
 /home/rai/Documentos/Projeto_A3/BookWiz/src/main/java/com/bookwiz/bookwiz/entity/Livro.java
 /home/rai/Documentos/Projeto_A3/BookWiz/src/main/java/com/bookwiz/bookwiz/DAO/UsuarioDAO.java
 /home/rai/Documentos/Projeto_A3/BookWiz/src/main/java/com/bookwiz/bookwiz/entity/Usuario.java
+/home/rai/Documentos/Projeto_A3/BookWiz/src/main/java/com/bookwiz/bookwiz/screens/listarLivrosFrame.java
 /home/rai/Documentos/Projeto_A3/BookWiz/src/main/java/com/bookwiz/bookwiz/DAO/LivroDAO.java
 /home/rai/Documentos/Projeto_A3/BookWiz/src/main/java/com/bookwiz/bookwiz/Bookwiz.java
 /home/rai/Documentos/Projeto_A3/BookWiz/src/main/java/com/bookwiz/bookwiz/ConnectionFactory.java
