@@ -6,8 +6,11 @@ package com.bookwiz.bookwiz.DAO;
 
 import com.bookwiz.bookwiz.ConnectionFactory;
 import com.bookwiz.bookwiz.entity.Livro;
+import com.bookwiz.bookwiz.entity.Nota;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -48,6 +51,7 @@ public class LivroDAO {
             }
             Livro[] livros = new Livro[totalLivros];
             rs.beforeFirst();
+                
             for (int cont = 0; rs.next(); cont++) {
                 int id = rs.getInt("LV_ID");
                 String titulo = rs.getString("LV_TITULO");
@@ -55,7 +59,11 @@ public class LivroDAO {
                 int genero = rs.getInt("LV_GEN");
                 String dtcad = rs.getString("LV_DTCAD");
                 String descricao = rs.getString("LV_DESC");
-                Livro livro = new Livro(id, titulo, autor, genero, dtcad, descricao);
+                
+                NotaDAO notaDAO = new NotaDAO();
+                var nota = notaDAO.pegarNotaGeralDoLivro(id);
+                
+                Livro livro = new Livro(id, titulo, autor, genero, dtcad, descricao, nota);
                 livros[cont] = livro;
             }
             return livros;
