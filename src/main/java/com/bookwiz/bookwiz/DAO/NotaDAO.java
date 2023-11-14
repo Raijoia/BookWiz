@@ -32,11 +32,42 @@ public class NotaDAO {
             
             int livroId = rs.getInt("LV_ID");
             
-            ps2.setInt(1, nota.getNota());
+            int notaInt = (int) nota.getNota();
+            
+            ps2.setInt(1, notaInt);
             ps2.setInt(2, usuario.getId());
             ps2.setInt(3, livroId);
             
             ps2.execute();
+        }
+    }
+    
+    public Nota pegarNotaGeralDoLivro(int id) throws Exception{
+        String sql = "SELECT AVA_NOTA FROM TB_AVA WHERE LV_ID = ?;";
+        
+        try (
+            var factory = ConnectionFactory.conectar();
+            var ps = factory.prepareStatement(sql,
+                    ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY
+            );
+        ){
+            ps.setInt(1, id);
+            ps.execute();
+            
+            ResultSet rs = ps.executeQuery();
+            
+            int nota = 0;
+            int numeroDeNotas = 0;
+            
+            for (int cont = 1; rs.next(); cont++) {
+                nota += rs.getInt("AVA_NOTA");
+                numeroDeNotas = cont;
+            }
+            
+            int notaGeral = nota / numeroDeNotas;
+            
+            return new Nota(notaGeral);
         }
     }
 }
