@@ -101,9 +101,9 @@ public class MenuFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_addLivroButtonLivroActionPerformed
 
     private void verLivrosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verLivrosButtonActionPerformed
-        this.dispose();
         ListarLivrosFrame screen = new ListarLivrosFrame(usuario);
         screen.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_verLivrosButtonActionPerformed
 
     private void sairButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairButtonActionPerformed
