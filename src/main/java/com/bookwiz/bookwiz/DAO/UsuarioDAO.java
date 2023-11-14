@@ -2,8 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.bookwiz.bookwiz;
+package com.bookwiz.bookwiz.DAO;
 
+import com.bookwiz.bookwiz.ConnectionFactory;
+import com.bookwiz.bookwiz.entity.Usuario;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 

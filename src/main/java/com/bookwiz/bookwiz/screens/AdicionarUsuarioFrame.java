@@ -4,8 +4,8 @@
  */
 package com.bookwiz.bookwiz.screens;
 
-import com.bookwiz.bookwiz.Usuario;
-import com.bookwiz.bookwiz.UsuarioDAO;
+import com.bookwiz.bookwiz.DAO.UsuarioDAO;
+import com.bookwiz.bookwiz.entity.Usuario;
 import javax.swing.JOptionPane;
 
 /**

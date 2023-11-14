@@ -4,11 +4,12 @@
  */
 package com.bookwiz.bookwiz.screens;
 
-import com.bookwiz.bookwiz.Livro;
-import com.bookwiz.bookwiz.LivroDAO;
-import com.bookwiz.bookwiz.Nota;
-import com.bookwiz.bookwiz.NotaDAO;
-import com.bookwiz.bookwiz.Usuario;
+
+import com.bookwiz.bookwiz.DAO.LivroDAO;
+import com.bookwiz.bookwiz.DAO.NotaDAO;
+import com.bookwiz.bookwiz.entity.Livro;
+import com.bookwiz.bookwiz.entity.Nota;
+import com.bookwiz.bookwiz.entity.Usuario;
 import javax.swing.JOptionPane;
 
 /**
