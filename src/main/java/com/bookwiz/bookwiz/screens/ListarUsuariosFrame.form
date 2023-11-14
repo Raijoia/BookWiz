@@ -42,9 +42,6 @@
   </Layout>
   <SubComponents>
     <Component class="javax.swing.JComboBox" name="listarUsuariosComboBox">
-      <Properties>
-        <Property name="selectedIndex" type="int" value="-1"/>
-      </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Usuario&gt;"/>
       </AuxValues>

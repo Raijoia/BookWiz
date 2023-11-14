@@ -8,7 +8,7 @@ package com.bookwiz.bookwiz.entity;
  *
  * @author rai
  */
-public class Usuario {
+public class Usuario implements Comparable<Usuario>{
     private String nome, email, sexo, senha;
     private int id, pref, idade, acesso, ativo;
     
@@ -105,7 +105,13 @@ public class Usuario {
         this.idade = idade;
     }
     
+    @Override
     public String toString() {
         return this.nome;
+    }
+    
+    @Override
+    public int compareTo(Usuario outroUsuario) {
+        return this.nome.compareTo(outroUsuario.getNome());
     }
 }
