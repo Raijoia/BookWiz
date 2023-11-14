@@ -8,7 +8,7 @@ package com.bookwiz.bookwiz.entity;
  *
  * @author rai
  */
-public class Livro {
+public class Livro implements Comparable<Livro>{
     private String titulo, autor, dtcad, descricao;
     private int id, genero;
     private Nota nota;
@@ -86,7 +86,19 @@ public class Livro {
         this.id = id;
     }
     
+    @Override
     public String toString() {
         return this.titulo;
+    }
+    
+    @Override
+    public int compareTo(Livro outroLivro) {
+        if (this.nota.getNota() < outroLivro.getNota().getNota()){
+            return 1;
+        }
+        if (this.nota.getNota() > outroLivro.getNota().getNota()){
+            return -1;
+        }
+        return 0;
     }
 }

@@ -7,6 +7,7 @@ package com.bookwiz.bookwiz.screens;
 import com.bookwiz.bookwiz.DAO.LivroDAO;
 import com.bookwiz.bookwiz.entity.Livro;
 import com.bookwiz.bookwiz.entity.Usuario;
+import java.util.Arrays;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
@@ -33,6 +34,7 @@ public class ListarLivrosFrame extends javax.swing.JFrame {
         try {
             LivroDAO livroDAO = new LivroDAO();
             Livro[] livros = livroDAO.obterLivros();
+            Arrays.sort(livros);
             livrosComboBox.setModel(
                     new DefaultComboBoxModel<>(livros)
             );
