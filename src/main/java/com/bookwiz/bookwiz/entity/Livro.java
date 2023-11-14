@@ -2,21 +2,30 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.bookwiz.bookwiz;
+package com.bookwiz.bookwiz.entity;
 
 /**
  *
  * @author rai
  */
 public class Livro {
-    private String titulo, autor, dtcad, desc;
+    private String titulo, autor, dtcad, descricao;
     private int id, genero;
     
-    public Livro (String titulo, String autor, String desc, int genero) {
+    public Livro (String titulo, String autor, String descricao, int genero) {
         this.titulo = titulo;
         this.autor = autor;
-        this.desc = desc;
+        this.descricao = descricao;
         this.genero = genero;
+    }
+    
+    public Livro (int id, String titulo, String autor, int genero, String dtcad, String descricao) {
+        this.id = id;
+        this.titulo = titulo;
+        this.autor = autor;
+        this.genero = genero;
+        this.dtcad = dtcad;
+        this.descricao = descricao;
     }
 
     public int getGenero() {
@@ -52,11 +61,11 @@ public class Livro {
     }
 
     public String getDesc() {
-        return desc;
+        return descricao;
     }
 
     public void setDesc(String desc) {
-        this.desc = desc;
+        this.descricao = descricao;
     }
 
     public int getId() {
