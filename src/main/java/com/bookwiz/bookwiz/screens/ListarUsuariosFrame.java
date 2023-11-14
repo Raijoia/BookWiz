@@ -4,6 +4,11 @@
  */
 package com.bookwiz.bookwiz.screens;
 
+import com.bookwiz.bookwiz.DAO.UsuarioDAO;
+import com.bookwiz.bookwiz.entity.Usuario;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author rai
@@ -16,6 +21,28 @@ public class ListarUsuariosFrame extends javax.swing.JFrame {
     public ListarUsuariosFrame() {
         initComponents();
     }
+    
+    public ListarUsuariosFrame(Usuario usuario) {
+        this();
+        buscarLivros();
+        setLocationRelativeTo(null);
+    }
+    
+    private void buscarLivros() {
+        try {
+            UsuarioDAO usuarioDAO = new UsuarioDAO();
+            Usuario[] usuarios = usuarioDAO.obterUsuarios();
+            listarUsuariosComboBox.setModel(
+                    new DefaultComboBoxModel<>(usuarios)
+            );
+        }
+        catch (Exception e) {
+            JOptionPane.showMessageDialog(
+            null, 
+            "não encontrei lista de usuarios");
+            e.printStackTrace();
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,17 +53,27 @@ public class ListarUsuariosFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        listarUsuariosComboBox = new javax.swing.JComboBox<>();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        listarUsuariosComboBox.setSelectedIndex(-1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(147, 147, 147)
+                .addComponent(listarUsuariosComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(173, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(111, 111, 111)
+                .addComponent(listarUsuariosComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(439, Short.MAX_VALUE))
         );
 
         pack();
@@ -78,5 +115,6 @@ public class ListarUsuariosFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<Usuario> listarUsuariosComboBox;
     // End of variables declaration//GEN-END:variables
 }
