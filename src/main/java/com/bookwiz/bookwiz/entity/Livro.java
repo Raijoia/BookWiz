@@ -11,6 +11,7 @@ package com.bookwiz.bookwiz.entity;
 public class Livro {
     private String titulo, autor, dtcad, descricao;
     private int id, genero;
+    private Nota nota;
     
     public Livro (String titulo, String autor, String descricao, int genero) {
         this.titulo = titulo;
@@ -19,13 +20,22 @@ public class Livro {
         this.genero = genero;
     }
     
-    public Livro (int id, String titulo, String autor, int genero, String dtcad, String descricao) {
+    public Livro (int id, String titulo, String autor, int genero, String dtcad, String descricao, Nota nota) {
         this.id = id;
         this.titulo = titulo;
         this.autor = autor;
         this.genero = genero;
         this.dtcad = dtcad;
         this.descricao = descricao;
+        this.nota = nota;
+    }
+    
+    public Nota getNota() {
+        return nota;
+    }
+
+    public void setNota(Nota nota) {
+        this.nota = nota;
     }
     
     public int getGenero() {
