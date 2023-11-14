@@ -113,7 +113,9 @@ public class AdminFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_addUserButtonActionPerformed
 
     private void verUsuarioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verUsuarioButtonActionPerformed
-        // TODO add your handling code here:
+        ListarUsuariosFrame screen = new ListarUsuariosFrame(usuario);
+        screen.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_verUsuarioButtonActionPerformed
 
     private void sairButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairButtonSairActionPerformed
