@@ -63,4 +63,41 @@ public class UsuarioDAO {
             ps.execute();
         }
     }
+    public Usuario[] obterUsuarios() throws Exception {
+        String sql = "SELECT * FROM TB_USER WHERE USU_ATIVO = 1 AND TP_ID = 2;";
+        
+        try (
+            var factory = ConnectionFactory.conectar();
+            var ps = factory.prepareStatement(
+                    sql, 
+                    ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY
+            );
+            ResultSet rs = ps.executeQuery();
+        ){
+            int totalUsuario = 0;
+            if (rs.last()){
+                totalUsuario = rs.getRow();
+            }
+            Usuario[] usuarios = new Usuario[totalUsuario];
+            rs.beforeFirst();
+                
+            for (int cont = 0; rs.next(); cont++) {
+                int id = rs.getInt("USU_ID");
+                String nome = rs.getString("USU_NOME");
+                int generoPreferido = rs.getInt("USU_PREF");
+                int idade = rs.getInt("USU_IDADE");
+                String email = rs.getString("USU_EMAIL");
+                String sexo = rs.getString("USU_SEXO");
+                int ativo = rs.getInt("USU_ATIVO");
+                String senha = rs.getString("USU_SENHA");
+                int acesso = rs.getInt("TP_ID");
+                
+                Usuario usuario = new Usuario(nome, senha, email, sexo, generoPreferido, idade, acesso, ativo, id);
+                usuarios[cont] = usuario;
+            }
+            return usuarios;
+        }
+    }
+    
 }
