@@ -23,7 +23,7 @@ public class LivroDAO {
         ){
             ps.setString(1, livro.getTitulo());
             ps.setString(2, livro.getAutor());
-            ps.setString(3, livro.getDesc());
+            ps.setString(3, livro.getDescricao());
             ps.setInt(4, livro.getGenero());
             
             ps.execute();

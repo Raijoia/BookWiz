@@ -27,7 +27,7 @@ public class Livro {
         this.dtcad = dtcad;
         this.descricao = descricao;
     }
-
+    
     public int getGenero() {
         return genero;
     }
@@ -60,11 +60,11 @@ public class Livro {
         this.dtcad = dtcad;
     }
 
-    public String getDesc() {
+    public String getDescricao() {
         return descricao;
     }
 
-    public void setDesc(String desc) {
+    public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
 
@@ -74,5 +74,9 @@ public class Livro {
 
     public void setId(int id) {
         this.id = id;
+    }
+    
+    public String toString() {
+        return this.titulo;
     }
 }
