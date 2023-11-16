@@ -66,6 +66,7 @@ public class ListarUsuariosFrame extends javax.swing.JFrame {
         sexoUsuarioLabel = new javax.swing.JLabel();
         idadeUsuarioLabel = new javax.swing.JLabel();
         generoPreferidoUsuarioLabel = new javax.swing.JLabel();
+        voltarButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -85,12 +86,19 @@ public class ListarUsuariosFrame extends javax.swing.JFrame {
 
         generoPreferidoUsuarioLabel.setBorder(javax.swing.BorderFactory.createTitledBorder("Genero Preferido"));
 
+        voltarButton.setText("Voltar");
+        voltarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                voltarButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(117, 117, 117)
+                .addGap(110, 110, 110)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(listarUsuariosComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -100,7 +108,7 @@ public class ListarUsuariosFrame extends javax.swing.JFrame {
                                     .addComponent(emailUsuarioLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                         .addComponent(sexoUsuarioLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE)))
+                                        .addGap(0, 7, Short.MAX_VALUE)))
                                 .addGap(33, 33, 33))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGap(140, 140, 140)
@@ -110,11 +118,15 @@ public class ListarUsuariosFrame extends javax.swing.JFrame {
                             .addComponent(idUsuarioLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                             .addComponent(idadeUsuarioLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(110, 110, 110))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(voltarButton)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(119, 119, 119)
+                .addGap(184, 184, 184)
                 .addComponent(listarUsuariosComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(generoPreferidoUsuarioLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -126,7 +138,9 @@ public class ListarUsuariosFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(sexoUsuarioLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(idadeUsuarioLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(249, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
+                .addComponent(voltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -147,6 +161,12 @@ public class ListarUsuariosFrame extends javax.swing.JFrame {
         sexoUsuarioLabel.setText(sexo);
         idadeUsuarioLabel.setText(Integer.toString(idade));
     }//GEN-LAST:event_listarUsuariosComboBoxItemStateChanged
+
+    private void voltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarButtonActionPerformed
+        AdminFrame screen = new AdminFrame(usuario);
+        screen.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_voltarButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -190,5 +210,6 @@ public class ListarUsuariosFrame extends javax.swing.JFrame {
     private javax.swing.JLabel idadeUsuarioLabel;
     private javax.swing.JComboBox<Usuario> listarUsuariosComboBox;
     private javax.swing.JLabel sexoUsuarioLabel;
+    private javax.swing.JButton voltarButton;
     // End of variables declaration//GEN-END:variables
 }
