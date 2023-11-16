@@ -63,7 +63,8 @@ public class AtivarUsuarioInativoFrame extends javax.swing.JFrame {
         listarUsuariosInativosComboBox = new javax.swing.JComboBox<>();
         emailusuarioSelecionadoLabel = new javax.swing.JLabel();
         idUsuarioSelecionadoLabel = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        reativarUsuarioButton = new javax.swing.JButton();
+        voltarButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,10 +78,17 @@ public class AtivarUsuarioInativoFrame extends javax.swing.JFrame {
 
         idUsuarioSelecionadoLabel.setBorder(javax.swing.BorderFactory.createTitledBorder("ID"));
 
-        jButton1.setText("Reativar usuario");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        reativarUsuarioButton.setText("Reativar usuario");
+        reativarUsuarioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                reativarUsuarioButtonActionPerformed(evt);
+            }
+        });
+
+        voltarButton.setText("Voltar");
+        voltarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                voltarButtonActionPerformed(evt);
             }
         });
 
@@ -96,8 +104,12 @@ public class AtivarUsuarioInativoFrame extends javax.swing.JFrame {
                         .addComponent(emailusuarioSelecionadoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                         .addComponent(idUsuarioSelecionadoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(reativarUsuarioButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(155, 155, 155))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(voltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -109,8 +121,10 @@ public class AtivarUsuarioInativoFrame extends javax.swing.JFrame {
                     .addComponent(emailusuarioSelecionadoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
                     .addComponent(idUsuarioSelecionadoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(57, 57, 57)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(190, Short.MAX_VALUE))
+                .addComponent(reativarUsuarioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
+                .addComponent(voltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -126,7 +140,7 @@ public class AtivarUsuarioInativoFrame extends javax.swing.JFrame {
         idUsuarioSelecionadoLabel.setText(Integer.toString(id));
     }//GEN-LAST:event_listarUsuariosInativosComboBoxItemStateChanged
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void reativarUsuarioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reativarUsuarioButtonActionPerformed
         try {
             UsuarioDAO usuarioDAO = new UsuarioDAO();
             usuarioDAO.ativerUsuario(usuarioSelecionado);
@@ -135,7 +149,13 @@ public class AtivarUsuarioInativoFrame extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro " + e.getMessage());
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_reativarUsuarioButtonActionPerformed
+
+    private void voltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarButtonActionPerformed
+        AdminFrame screen = new AdminFrame(usuario);
+        screen.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_voltarButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,7 +195,8 @@ public class AtivarUsuarioInativoFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel emailusuarioSelecionadoLabel;
     private javax.swing.JLabel idUsuarioSelecionadoLabel;
-    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<Usuario> listarUsuariosInativosComboBox;
+    private javax.swing.JButton reativarUsuarioButton;
+    private javax.swing.JButton voltarButton;
     // End of variables declaration//GEN-END:variables
 }
