@@ -151,4 +151,18 @@ public class UsuarioDAO {
             ps.execute();
         }
     }
+    
+    public void desativarUsuario(Usuario user) throws Exception {
+        String sql = "UPDATE TB_USER SET USU_ATIVO = 0 WHERE USU_ID = ? AND USU_NOME = ?;";
+        
+        try (
+            var factory = ConnectionFactory.conectar();
+            var ps = factory.prepareStatement(sql);
+        ){
+            ps.setInt(1, user.getId());
+            ps.setString(2, user.getNome());
+            
+            ps.execute();
+        }
+    }
 }
