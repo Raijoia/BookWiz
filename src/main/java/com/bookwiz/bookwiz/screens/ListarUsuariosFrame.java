@@ -29,12 +29,12 @@ public class ListarUsuariosFrame extends javax.swing.JFrame {
     
     public ListarUsuariosFrame(Usuario usuario) {
         this();
-        buscarLivros();
+        buscarUsuarios();
         setLocationRelativeTo(null);
         this.usuario = usuario;
     }
     
-    private void buscarLivros() {
+    private void buscarUsuarios() {
         try {
             UsuarioDAO usuarioDAO = new UsuarioDAO();
             Usuario[] usuarios = usuarioDAO.obterUsuarios();
