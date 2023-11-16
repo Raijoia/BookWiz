@@ -2,10 +2,14 @@ com/bookwiz/bookwiz/screens/AtivarUsuarioInativoFrame$3.class
 com/bookwiz/bookwiz/screens/ListarUsuariosFrame$3.class
 com/bookwiz/bookwiz/screens/ListarLivrosFrame$5.class
 com/bookwiz/bookwiz/screens/AtivarUsuarioInativoFrame$4.class
+com/bookwiz/bookwiz/screens/DesativarContaFrame.class
+com/bookwiz/bookwiz/screens/DesativarContaFrame$1.class
 com/bookwiz/bookwiz/screens/AtivarUsuarioInativoFrame$1.class
 com/bookwiz/bookwiz/screens/AtivarUsuarioInativoFrame.class
+com/bookwiz/bookwiz/screens/DesativarContaFrame$2.class
 com/bookwiz/bookwiz/screens/ListarLivrosFrame$3.class
 com/bookwiz/bookwiz/screens/AtivarUsuarioInativoFrame$2.class
+com/bookwiz/bookwiz/screens/MenuFrame$5.class
 com/bookwiz/bookwiz/screens/ListarLivrosFrame$4.class
 com/bookwiz/bookwiz/screens/AdminFrame$5.class
 com/bookwiz/bookwiz/screens/ListarUsuariosFrame$2.class

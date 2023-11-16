@@ -4,7 +4,9 @@
  */
 package com.bookwiz.bookwiz.screens;
 
+import com.bookwiz.bookwiz.DAO.UsuarioDAO;
 import com.bookwiz.bookwiz.entity.Usuario;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -24,6 +26,7 @@ public class DesativarContaFrame extends javax.swing.JFrame {
         this();
         this.usuario = usuario;
         setLocationRelativeTo(null);
+        messageLabel.setText(usuario.getNome() + ", deseja desativar sua conta??");
     }
 
     /**
@@ -35,21 +38,92 @@ public class DesativarContaFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        desativarButton = new javax.swing.JButton();
+        messageLabel = new javax.swing.JLabel();
+        descricaoLabel1 = new javax.swing.JLabel();
+        descricaoLabel2 = new javax.swing.JLabel();
+        descricaoLabel3 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        desativarButton.setText("Desativar");
+        desativarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                desativarButtonActionPerformed(evt);
+            }
+        });
+
+        messageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        messageLabel.setToolTipText("");
+        messageLabel.setAlignmentY(0.0F);
+        messageLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        descricaoLabel1.setText("para reativar sua conta novamente, deverá  ");
+
+        descricaoLabel2.setText("chamar um de nossos administradores para");
+
+        descricaoLabel3.setText("que eles reativem sua conta");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(162, 162, 162)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(descricaoLabel2)
+                            .addComponent(descricaoLabel1)
+                            .addComponent(descricaoLabel3))
+                        .addContainerGap(152, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(messageLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(desativarButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(158, 158, 158))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(210, Short.MAX_VALUE)
+                .addComponent(messageLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(descricaoLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(descricaoLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(descricaoLabel3)
+                .addGap(29, 29, 29)
+                .addComponent(desativarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(232, 232, 232))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void desativarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_desativarButtonActionPerformed
+        int dialogResult = JOptionPane.showConfirmDialog(null, usuario.getNome() + ", deseja realmente desativa sua conta?");
+        if(dialogResult == JOptionPane.YES_NO_OPTION){
+            try {
+                UsuarioDAO usuarioDAO = new UsuarioDAO();
+                usuarioDAO.desativarUsuario(usuario);
+                
+                JOptionPane.showMessageDialog(null, "Conta desativada com sucesso");
+                
+                LoginFrame screen = new LoginFrame();
+                screen.setVisible(true);
+                this.dispose();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Error " + e.getMessage());
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Ação cancelada");
+            MenuFrame screen = new MenuFrame(usuario);
+            screen.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_desativarButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -87,5 +161,10 @@ public class DesativarContaFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton desativarButton;
+    private javax.swing.JLabel descricaoLabel1;
+    private javax.swing.JLabel descricaoLabel2;
+    private javax.swing.JLabel descricaoLabel3;
+    private javax.swing.JLabel messageLabel;
     // End of variables declaration//GEN-END:variables
 }
