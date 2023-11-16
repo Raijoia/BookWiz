@@ -71,6 +71,11 @@ public class AdminFrame extends javax.swing.JFrame {
         });
 
         ativarUsuarioButton.setText("Ativar usuario inativo");
+        ativarUsuarioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ativarUsuarioButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -127,6 +132,12 @@ public class AdminFrame extends javax.swing.JFrame {
     private void sairButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairButtonSairActionPerformed
         this.dispose();
     }//GEN-LAST:event_sairButtonSairActionPerformed
+
+    private void ativarUsuarioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ativarUsuarioButtonActionPerformed
+        AtivarUsuarioInativoFrame screen = new AtivarUsuarioInativoFrame(usuario);
+        screen.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ativarUsuarioButtonActionPerformed
 
     /**
      * @param args the command line arguments
