@@ -6,6 +6,7 @@ package com.bookwiz.bookwiz.screens;
 
 import com.bookwiz.bookwiz.DAO.UsuarioDAO;
 import com.bookwiz.bookwiz.entity.Usuario;
+import java.awt.event.ItemEvent;
 import java.util.Arrays;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
@@ -15,7 +16,10 @@ import javax.swing.JOptionPane;
  * @author rai
  */
 public class ListarUsuariosFrame extends javax.swing.JFrame {
-
+    Usuario usuario, usuarioSelecionado;
+    String email, sexo;
+    int idade, id, pref;
+    
     /**
      * Creates new form ListarUsuariosFrame
      */
@@ -27,6 +31,7 @@ public class ListarUsuariosFrame extends javax.swing.JFrame {
         this();
         buscarLivros();
         setLocationRelativeTo(null);
+        this.usuario = usuario;
     }
     
     private void buscarLivros() {
@@ -56,30 +61,92 @@ public class ListarUsuariosFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         listarUsuariosComboBox = new javax.swing.JComboBox<>();
+        idUsuarioLabel = new javax.swing.JLabel();
+        emailUsuarioLabel = new javax.swing.JLabel();
+        sexoUsuarioLabel = new javax.swing.JLabel();
+        idadeUsuarioLabel = new javax.swing.JLabel();
+        generoPreferidoUsuarioLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        listarUsuariosComboBox.setSelectedIndex(-1);
+        listarUsuariosComboBox.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                listarUsuariosComboBoxItemStateChanged(evt);
+            }
+        });
+
+        idUsuarioLabel.setBorder(javax.swing.BorderFactory.createTitledBorder("ID"));
+
+        emailUsuarioLabel.setBorder(javax.swing.BorderFactory.createTitledBorder("E-mail"));
+
+        sexoUsuarioLabel.setBorder(javax.swing.BorderFactory.createTitledBorder("Sexo"));
+
+        idadeUsuarioLabel.setBorder(javax.swing.BorderFactory.createTitledBorder("Idade"));
+
+        generoPreferidoUsuarioLabel.setBorder(javax.swing.BorderFactory.createTitledBorder("Genero Preferido"));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(147, 147, 147)
-                .addComponent(listarUsuariosComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(173, Short.MAX_VALUE))
+                .addGap(117, 117, 117)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(listarUsuariosComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(emailUsuarioLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(sexoUsuarioLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(33, 33, 33))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(140, 140, 140)
+                                .addComponent(generoPreferidoUsuarioLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(3, 3, 3)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(idUsuarioLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                            .addComponent(idadeUsuarioLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(110, 110, 110))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(111, 111, 111)
+                .addGap(119, 119, 119)
                 .addComponent(listarUsuariosComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(439, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(generoPreferidoUsuarioLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(idUsuarioLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(emailUsuarioLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(sexoUsuarioLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(idadeUsuarioLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(249, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void listarUsuariosComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_listarUsuariosComboBoxItemStateChanged
+         if(evt.getStateChange() == ItemEvent.SELECTED){
+            usuarioSelecionado = (Usuario)evt.getItem();
+            email = usuarioSelecionado.getEmail();
+            sexo = usuarioSelecionado.getSexo();
+            idade = usuarioSelecionado.getIdade();
+            id = usuarioSelecionado.getId();
+            pref = usuarioSelecionado.getPref();
+        }
+        generoPreferidoUsuarioLabel.setText(Integer.toString(pref));
+        emailUsuarioLabel.setText(email);
+        idUsuarioLabel.setText(Integer.toString(id));
+        sexoUsuarioLabel.setText(sexo);
+        idadeUsuarioLabel.setText(Integer.toString(idade));
+    }//GEN-LAST:event_listarUsuariosComboBoxItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -117,6 +184,11 @@ public class ListarUsuariosFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel emailUsuarioLabel;
+    private javax.swing.JLabel generoPreferidoUsuarioLabel;
+    private javax.swing.JLabel idUsuarioLabel;
+    private javax.swing.JLabel idadeUsuarioLabel;
     private javax.swing.JComboBox<Usuario> listarUsuariosComboBox;
+    private javax.swing.JLabel sexoUsuarioLabel;
     // End of variables declaration//GEN-END:variables
 }
