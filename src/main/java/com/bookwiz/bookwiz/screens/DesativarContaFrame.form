@@ -43,6 +43,11 @@
                   </Group>
               </Group>
           </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="voltarButton" min="-2" pref="100" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -58,7 +63,9 @@
               <Component id="descricaoLabel3" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
               <Component id="desativarButton" min="-2" pref="60" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="232" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="176" max="-2" attributes="0"/>
+              <Component id="voltarButton" min="-2" pref="50" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -94,6 +101,14 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="que eles reativem sua conta"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="voltarButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Voltar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="voltarButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

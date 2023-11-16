@@ -43,6 +43,7 @@ public class DesativarContaFrame extends javax.swing.JFrame {
         descricaoLabel1 = new javax.swing.JLabel();
         descricaoLabel2 = new javax.swing.JLabel();
         descricaoLabel3 = new javax.swing.JLabel();
+        voltarButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,6 +65,13 @@ public class DesativarContaFrame extends javax.swing.JFrame {
 
         descricaoLabel3.setText("que eles reativem sua conta");
 
+        voltarButton.setText("Voltar");
+        voltarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                voltarButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -82,6 +90,10 @@ public class DesativarContaFrame extends javax.swing.JFrame {
                             .addComponent(messageLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(desativarButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(158, 158, 158))))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(voltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -96,7 +108,9 @@ public class DesativarContaFrame extends javax.swing.JFrame {
                 .addComponent(descricaoLabel3)
                 .addGap(29, 29, 29)
                 .addComponent(desativarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(232, 232, 232))
+                .addGap(176, 176, 176)
+                .addComponent(voltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -124,6 +138,12 @@ public class DesativarContaFrame extends javax.swing.JFrame {
             this.dispose();
         }
     }//GEN-LAST:event_desativarButtonActionPerformed
+
+    private void voltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarButtonActionPerformed
+        MenuFrame screen = new MenuFrame(usuario);
+        screen.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_voltarButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -166,5 +186,6 @@ public class DesativarContaFrame extends javax.swing.JFrame {
     private javax.swing.JLabel descricaoLabel2;
     private javax.swing.JLabel descricaoLabel3;
     private javax.swing.JLabel messageLabel;
+    private javax.swing.JButton voltarButton;
     // End of variables declaration//GEN-END:variables
 }
