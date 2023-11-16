@@ -165,11 +165,11 @@ public class ListarLivrosFrame extends javax.swing.JFrame {
 
     private void livrosComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_livrosComboBoxItemStateChanged
         if(evt.getStateChange() == ItemEvent.SELECTED){
-            descricao = ((Livro)evt.getItem()).getDescricao();
-            autor = ((Livro)evt.getItem()).getAutor();
-            nota = ((Livro)evt.getItem()).getNota().getNota();
-            genero = ((Livro)evt.getItem()).getGenero();
             livro = (Livro)evt.getItem();
+            descricao = livro.getDescricao();
+            autor = livro.getAutor();
+            nota = livro.getNota().getNota();
+            genero = livro.getGenero();
         }
         descricaoLabel.setText(descricao);
         notaMediaLabel.setText(Integer.toString(nota));
