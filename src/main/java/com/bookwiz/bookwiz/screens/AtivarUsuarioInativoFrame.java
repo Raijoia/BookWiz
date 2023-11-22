@@ -19,6 +19,7 @@ public class AtivarUsuarioInativoFrame extends javax.swing.JFrame {
     Usuario usuario, usuarioSelecionado;
     String email;
     int id;
+    Usuario[] usuarios;
     
     /**
      * Creates new form AtivarUsuarioInativoFrame
@@ -37,11 +38,18 @@ public class AtivarUsuarioInativoFrame extends javax.swing.JFrame {
     private void buscarUsuarioInativos() {
         try {
             UsuarioDAO usuarioDAO = new UsuarioDAO();
-            Usuario[] usuarios = usuarioDAO.obterUsuariosInativos();
+            usuarios = usuarioDAO.obterUsuariosInativos();
             Arrays.sort(usuarios);
             listarUsuariosInativosComboBox.setModel(
                     new DefaultComboBoxModel<>(usuarios)
             );
+            usuarioSelecionado = usuarios[0];
+                
+            email = usuarioSelecionado.getEmail();
+            id = usuarioSelecionado.getId();
+                
+            emailusuarioSelecionadoLabel.setText(email);
+            idUsuarioSelecionadoLabel.setText(Integer.toString(id));
         }
         catch (Exception e) {
             JOptionPane.showMessageDialog(
@@ -71,6 +79,11 @@ public class AtivarUsuarioInativoFrame extends javax.swing.JFrame {
         listarUsuariosInativosComboBox.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 listarUsuariosInativosComboBoxItemStateChanged(evt);
+            }
+        });
+        listarUsuariosInativosComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listarUsuariosInativosComboBoxActionPerformed(evt);
             }
         });
 
@@ -136,6 +149,7 @@ public class AtivarUsuarioInativoFrame extends javax.swing.JFrame {
             email = usuarioSelecionado.getEmail();
             id = usuarioSelecionado.getId();
         }
+        
         emailusuarioSelecionadoLabel.setText(email);
         idUsuarioSelecionadoLabel.setText(Integer.toString(id));
     }//GEN-LAST:event_listarUsuariosInativosComboBoxItemStateChanged
@@ -143,7 +157,7 @@ public class AtivarUsuarioInativoFrame extends javax.swing.JFrame {
     private void reativarUsuarioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reativarUsuarioButtonActionPerformed
         try {
             UsuarioDAO usuarioDAO = new UsuarioDAO();
-            usuarioDAO.ativerUsuario(usuarioSelecionado);
+            usuarioDAO.ativarUsuario(usuarioSelecionado);
             JOptionPane.showMessageDialog(null, "Usuario " + usuarioSelecionado.getNome() +" com id " + usuarioSelecionado.getId() + " foi reativado com sucesso");
             buscarUsuarioInativos();
         } catch (Exception e) {
@@ -156,6 +170,9 @@ public class AtivarUsuarioInativoFrame extends javax.swing.JFrame {
         screen.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_voltarButtonActionPerformed
+
+    private void listarUsuariosInativosComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listarUsuariosInativosComboBoxActionPerformed
+    }//GEN-LAST:event_listarUsuariosInativosComboBoxActionPerformed
 
     /**
      * @param args the command line arguments

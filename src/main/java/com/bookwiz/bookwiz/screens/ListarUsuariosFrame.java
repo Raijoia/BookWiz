@@ -19,6 +19,7 @@ public class ListarUsuariosFrame extends javax.swing.JFrame {
     Usuario usuario, usuarioSelecionado;
     String email, sexo;
     int idade, id, pref;
+    Usuario[] usuarios;
     
     /**
      * Creates new form ListarUsuariosFrame
@@ -37,11 +38,24 @@ public class ListarUsuariosFrame extends javax.swing.JFrame {
     private void buscarUsuarios() {
         try {
             UsuarioDAO usuarioDAO = new UsuarioDAO();
-            Usuario[] usuarios = usuarioDAO.obterUsuarios();
+            usuarios = usuarioDAO.obterUsuarios();
             Arrays.sort(usuarios);
             listarUsuariosComboBox.setModel(
                     new DefaultComboBoxModel<>(usuarios)
             );
+            usuarioSelecionado = usuarios[0];
+            
+            email = usuarioSelecionado.getEmail();
+            sexo = usuarioSelecionado.getSexo();
+            idade = usuarioSelecionado.getIdade();
+            id = usuarioSelecionado.getId();
+            pref = usuarioSelecionado.getPref();
+            
+            generoPreferidoUsuarioLabel.setText(Integer.toString(pref));
+            emailUsuarioLabel.setText(email);
+            idUsuarioLabel.setText(Integer.toString(id));
+            sexoUsuarioLabel.setText(sexo);
+            idadeUsuarioLabel.setText(Integer.toString(idade));
         }
         catch (Exception e) {
             JOptionPane.showMessageDialog(

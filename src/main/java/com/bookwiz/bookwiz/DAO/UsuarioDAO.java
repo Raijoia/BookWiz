@@ -138,7 +138,7 @@ public class UsuarioDAO {
         }
     }
     
-    public void ativerUsuario(Usuario user) throws Exception {
+    public void ativarUsuario(Usuario user) throws Exception {
         String sql = "UPDATE TB_USER SET USU_ATIVO = 1 WHERE USU_ID = ? AND USU_NOME = ?;";
         
         try (

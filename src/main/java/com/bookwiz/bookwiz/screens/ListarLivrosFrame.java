@@ -23,6 +23,7 @@ public class ListarLivrosFrame extends javax.swing.JFrame {
     String descricao, autor;
     int nota, genero;
     Livro livro;
+    Livro[] livros;
 
     /**
      * Creates new form listarLivrosFrame
@@ -41,11 +42,21 @@ public class ListarLivrosFrame extends javax.swing.JFrame {
     private void buscarLivros() {
         try {
             LivroDAO livroDAO = new LivroDAO();
-            Livro[] livros = livroDAO.obterLivros();
+            livros = livroDAO.obterLivros();
             Arrays.sort(livros);
             livrosComboBox.setModel(
                     new DefaultComboBoxModel<>(livros)
             );
+            livro = livros[0];
+            
+            descricao = livro.getDescricao();
+            autor = livro.getAutor();
+            nota = livro.getNota().getNota();
+            genero = livro.getGenero();
+            
+            descricaoLabel.setText(descricao);
+            notaMediaLabel.setText(Integer.toString(nota));
+            autorLabel.setText(autor);
         }
         catch (Exception e) {
             JOptionPane.showMessageDialog(
@@ -175,7 +186,8 @@ public class ListarLivrosFrame extends javax.swing.JFrame {
             autor = livro.getAutor();
             nota = livro.getNota().getNota();
             genero = livro.getGenero();
-        }
+        } 
+        
         descricaoLabel.setText(descricao);
         notaMediaLabel.setText(Integer.toString(nota));
         autorLabel.setText(autor);
