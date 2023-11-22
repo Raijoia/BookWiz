@@ -24,7 +24,7 @@ CREATE TABLE TIPO_USU (
 );
 
 CREATE TABLE SEX_USU(
-	SEX_ID int NOT NULL primary key,
+	SEX_ID int NOT NULL PRIMARY KEY AUTO_INCREMENT,
     SEX_DESC varchar(200) not null
 );
 
