@@ -9,10 +9,10 @@ package com.bookwiz.bookwiz.entity;
  * @author rai
  */
 public class Usuario implements Comparable<Usuario>{
-    private String nome, email, sexo, senha;
-    private int id, pref, idade, acesso, ativo;
+    private String nome, email, senha;
+    private int id, pref, idade, acesso, ativo, sexo;
     
-    public Usuario(String nome, String senha, String email, String sexo, int pref, int idade){
+    public Usuario(String nome, String senha, String email, int sexo, int pref, int idade){
         this.nome = nome;
         this.senha = senha;
         this.email = email;
@@ -21,7 +21,7 @@ public class Usuario implements Comparable<Usuario>{
         this.idade = idade;
     }
     
-    public Usuario(String nome,String senha, String email, String sexo, int pref, int idade, int acesso, int ativo, int id) {
+    public Usuario(String nome,String senha, String email, int sexo, int pref, int idade, int acesso, int ativo, int id) {
         this.nome = nome;
         this.senha = senha;
         this.email = email;
@@ -73,11 +73,11 @@ public class Usuario implements Comparable<Usuario>{
         this.email = email;
     }
 
-    public String getSexo() {
+    public int getSexo() {
         return sexo;
     }
 
-    public void setSexo(String sexo) {
+    public void setSexo(int sexo) {
         this.sexo = sexo;
     }
 

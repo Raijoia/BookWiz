@@ -46,7 +46,7 @@ public class ListarUsuariosFrame extends javax.swing.JFrame {
             usuarioSelecionado = usuarios[0];
             
             email = usuarioSelecionado.getEmail();
-            sexo = usuarioSelecionado.getSexo();
+            sexo = Integer.toString(usuarioSelecionado.getSexo());
             idade = usuarioSelecionado.getIdade();
             id = usuarioSelecionado.getId();
             pref = usuarioSelecionado.getPref();
@@ -164,7 +164,7 @@ public class ListarUsuariosFrame extends javax.swing.JFrame {
          if(evt.getStateChange() == ItemEvent.SELECTED){
             usuarioSelecionado = (Usuario)evt.getItem();
             email = usuarioSelecionado.getEmail();
-            sexo = usuarioSelecionado.getSexo();
+            sexo = Integer.toString(usuarioSelecionado.getSexo());
             idade = usuarioSelecionado.getIdade();
             id = usuarioSelecionado.getId();
             pref = usuarioSelecionado.getPref();

@@ -56,6 +56,11 @@ public class AdicionarLivroFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         tituloTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Titulo"));
+        tituloTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tituloTextFieldActionPerformed(evt);
+            }
+        });
 
         autorTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Autor"));
 
@@ -104,26 +109,22 @@ public class AdicionarLivroFrame extends javax.swing.JFrame {
                         .addGap(223, 223, 223)
                         .addComponent(addButtonAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(223, 223, 223))
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(164, 164, 164)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(tituloTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(notaTextField)
-                            .addComponent(descricaoTextField)
-                            .addComponent(generoTextField)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(romanceLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ficcaoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tecnicoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(57, 57, 57))
-                            .addComponent(autorTextField))
-                        .addGap(164, 164, 164))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(tituloTextField)
+                    .addComponent(notaTextField, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(descricaoTextField, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(generoTextField, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(romanceLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ficcaoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tecnicoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(57, 57, 57))
+                    .addComponent(autorTextField, javax.swing.GroupLayout.Alignment.LEADING))
+                .addGap(164, 164, 164))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -172,8 +173,13 @@ public class AdicionarLivroFrame extends javax.swing.JFrame {
             int genero = Integer.parseInt(generoTextField.getText());
             String desc = descricaoTextField.getText();
             int nota = Integer.parseInt(notaTextField.getText());
-            if(nota < 0 || nota > 10){
+            
+            while (nota < 0 || nota > 10){
                 nota = Integer.parseInt(JOptionPane.showInputDialog("nota inserida é invalido, digite novamente uma nota entre 0 a 10"));
+            }
+            
+            while (genero <= 0 || genero > 3) {
+                genero = Integer.parseInt(JOptionPane.showInputDialog("genero inserido é invalido"));
             }
 
             var livroNovo = new Livro(titulo, autor, desc, genero);
@@ -192,6 +198,9 @@ public class AdicionarLivroFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Error " + e);
         }
     }//GEN-LAST:event_addButtonAddActionPerformed
+
+    private void tituloTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tituloTextFieldActionPerformed
+    }//GEN-LAST:event_tituloTextFieldActionPerformed
 
     /**
      * @param args the command line arguments

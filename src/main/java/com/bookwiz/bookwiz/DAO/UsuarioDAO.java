@@ -15,7 +15,7 @@ import java.sql.SQLException;
  */
 public class UsuarioDAO {
     public Usuario verificarUsuario(String usuario, String senha) throws Exception{
-        String sql = "SELECT USU_NOME, USU_SENHA, USU_EMAIL, USU_SEXO, USU_PREF, USU_IDADE, TP_ID, USU_ATIVO, USU_ID FROM TB_USER WHERE USU_NOME = ? && USU_SENHA = ?;";
+        String sql = "SELECT USU_NOME, USU_SENHA, USU_EMAIL, SEX_ID, USU_PREF, USU_IDADE, TP_ID, USU_ATIVO, USU_ID FROM TB_USER WHERE USU_NOME = ? && USU_SENHA = ?;";
         
         try (
             var factory = ConnectionFactory.conectar();
@@ -34,7 +34,7 @@ public class UsuarioDAO {
                 rs.getString("USU_NOME"),
                 rs.getString("USU_SENHA"),
                 rs.getString("USU_EMAIL"),
-                rs.getString("USU_SEXO"),
+                rs.getInt("SEX_ID"),
                 rs.getInt("USU_PREF"),
                 rs.getInt("USU_IDADE"),
                 rs.getInt("TP_ID"),
@@ -47,7 +47,7 @@ public class UsuarioDAO {
     }
     
     public void adicionarUsuario(Usuario user) throws SQLException, Exception {
-        String sql = "INSERT INTO TB_USER (USU_NOME, USU_SENHA, USU_IDADE, USU_SEXO, USU_EMAIL, USU_PREF, TP_ID) VALUES (?, ?, ?, ?, ?, ?, 2);";
+        String sql = "INSERT INTO TB_USER (USU_NOME, USU_SENHA, USU_IDADE, SEX_ID, USU_EMAIL, USU_PREF, TP_ID) VALUES (?, ?, ?, ?, ?, ?, 2);";
         
         try (
             var factory = ConnectionFactory.conectar();
@@ -56,7 +56,7 @@ public class UsuarioDAO {
             ps.setString(1, user.getNome());
             ps.setString(2, user.getSenha());
             ps.setInt(3, user.getIdade());
-            ps.setString(4, user.getSexo());
+            ps.setInt(4, user.getSexo());
             ps.setString(5, user.getEmail());
             ps.setInt(6, user.getPref());
             
@@ -89,7 +89,7 @@ public class UsuarioDAO {
                 int generoPreferido = rs.getInt("USU_PREF");
                 int idade = rs.getInt("USU_IDADE");
                 String email = rs.getString("USU_EMAIL");
-                String sexo = rs.getString("USU_SEXO");
+                int sexo = rs.getInt("SEX_ID");
                 int ativo = rs.getInt("USU_ATIVO");
                 String senha = rs.getString("USU_SENHA");
                 int acesso = rs.getInt("TP_ID");
@@ -126,7 +126,7 @@ public class UsuarioDAO {
                 int generoPreferido = rs.getInt("USU_PREF");
                 int idade = rs.getInt("USU_IDADE");
                 String email = rs.getString("USU_EMAIL");
-                String sexo = rs.getString("USU_SEXO");
+                int sexo = rs.getInt("SEX_ID");
                 int ativo = rs.getInt("USU_ATIVO");
                 String senha = rs.getString("USU_SENHA");
                 int acesso = rs.getInt("TP_ID");
