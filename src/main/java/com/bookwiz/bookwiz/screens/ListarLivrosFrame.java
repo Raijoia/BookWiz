@@ -100,6 +100,11 @@ public class ListarLivrosFrame extends javax.swing.JFrame {
         autorLabel.setBorder(javax.swing.BorderFactory.createTitledBorder("Autor do livro"));
 
         addNotaTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Dê sua nota para o livro"));
+        addNotaTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addNotaTextFieldActionPerformed(evt);
+            }
+        });
 
         voltarButton.setText("Voltar");
         voltarButton.addActionListener(new java.awt.event.ActionListener() {
@@ -178,6 +183,10 @@ public class ListarLivrosFrame extends javax.swing.JFrame {
 
     private void addNotaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addNotaButtonActionPerformed
         try {
+            if(Integer.parseInt(addNotaTextField.getText()) < 0 || Integer.parseInt(addNotaTextField.getText()) > 10) {
+                addNotaTextField.setText(JOptionPane.showInputDialog("Nota inserida é inválida, digite uma nota de 0 a 10 novamente"));
+            }
+            
             Nota novaNota = new Nota(Integer.parseInt(addNotaTextField.getText()));
             NotaDAO notaDAO = new NotaDAO();
             notaDAO.adicionarNota(novaNota, usuario, livro);
@@ -193,6 +202,10 @@ public class ListarLivrosFrame extends javax.swing.JFrame {
         screen.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_voltarButtonActionPerformed
+
+    private void addNotaTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addNotaTextFieldActionPerformed
+        
+    }//GEN-LAST:event_addNotaTextFieldActionPerformed
     
     /**
      * @param args the command line arguments
