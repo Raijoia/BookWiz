@@ -23,39 +23,39 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="voltarButton" min="-2" pref="100" max="-2" attributes="0"/>
+              <EmptySpace pref="485" max="32767" attributes="0"/>
+          </Group>
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="156" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="listarUsuariosInativosComboBox" max="32767" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="emailusuarioSelecionadoLabel" min="-2" pref="200" max="-2" attributes="0"/>
-                      <EmptySpace pref="30" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="idUsuarioSelecionadoLabel" min="-2" pref="50" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="reativarUsuarioButton" max="32767" attributes="0"/>
+                  <Component id="reativarUsuarioButton" min="-2" pref="280" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="voltarButton" min="-2" pref="100" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="190" max="-2" attributes="0"/>
+              <EmptySpace pref="205" max="32767" attributes="0"/>
               <Component id="listarUsuariosInativosComboBox" min="-2" pref="51" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="emailusuarioSelecionadoLabel" pref="50" max="32767" attributes="0"/>
-                  <Component id="idUsuarioSelecionadoLabel" max="32767" attributes="0"/>
+                  <Component id="emailusuarioSelecionadoLabel" max="32767" attributes="0"/>
+                  <Component id="idUsuarioSelecionadoLabel" min="-2" pref="50" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="reativarUsuarioButton" min="-2" pref="50" max="-2" attributes="0"/>
-              <EmptySpace pref="134" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="152" max="-2" attributes="0"/>
               <Component id="voltarButton" min="-2" pref="50" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -67,6 +67,11 @@
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="0"/>
+        </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Usuarios"/>
+          </Border>
         </Property>
       </Properties>
       <Events>
