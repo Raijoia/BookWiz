@@ -189,7 +189,7 @@ public class ListarLivrosFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_addNotaButtonActionPerformed
 
     private void voltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarButtonActionPerformed
-        MenuFrame screen = new MenuFrame();
+        MenuFrame screen = new MenuFrame(usuario);
         screen.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_voltarButtonActionPerformed
