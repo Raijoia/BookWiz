@@ -68,6 +68,7 @@ public class LoginFrame extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel1.setText("Bem-Vindo ao BookWiz!!");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -87,17 +88,17 @@ public class LoginFrame extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(104, 104, 104)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
-                .addGap(67, 67, 67)
-                .addComponent(loginTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
+                .addGap(157, 157, 157)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(34, 34, 34)
+                .addComponent(loginTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(passwordTextPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
                 .addGap(26, 26, 26)
                 .addComponent(okButtomOk, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(sairButtomSair, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
-                .addGap(154, 154, 154))
+                .addGap(134, 134, 134))
         );
 
         pack();

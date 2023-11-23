@@ -25,6 +25,7 @@ public class AdminFrame extends javax.swing.JFrame {
         this();
         this.usuario = usuario;
         setLocationRelativeTo(null);
+        olaLabel.setText("OLÁ, " + usuario.getNome().toUpperCase() + "!!");
     }
 
     /**
@@ -44,11 +45,13 @@ public class AdminFrame extends javax.swing.JFrame {
         ativarUsuarioButton = new javax.swing.JButton();
         menuButton = new javax.swing.JButton();
         logoutButton = new javax.swing.JButton();
+        olaLabel = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        bookwizLabel.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         bookwizLabel.setText("ADMIN");
 
         addUserButton.setText("Adicionar usuario novo");
@@ -93,6 +96,9 @@ public class AdminFrame extends javax.swing.JFrame {
             }
         });
 
+        olaLabel.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        olaLabel.setText("Olá, Usuario!!");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -109,25 +115,33 @@ public class AdminFrame extends javax.swing.JFrame {
                     .addComponent(menuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(addUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(verUsuarioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ativarUsuarioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(119, 119, 119)
-                        .addComponent(bookwizLabel)))
+                    .addComponent(ativarUsuarioButton, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(146, 146, 146))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(249, 249, 249)
+                        .addComponent(bookwizLabel))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(olaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(121, 121, 121)
+                .addContainerGap()
+                .addComponent(olaLabel)
+                .addGap(106, 106, 106)
                 .addComponent(bookwizLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(40, 40, 40)
-                .addComponent(addUserButton, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
+                .addGap(32, 32, 32)
+                .addComponent(addUserButton, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(verUsuarioButton, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
+                .addComponent(verUsuarioButton, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ativarUsuarioButton, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
+                .addComponent(ativarUsuarioButton, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(menuButton, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
+                .addComponent(menuButton, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
                 .addGap(96, 96, 96)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(sairButtonSair, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -214,6 +228,7 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton logoutButton;
     private javax.swing.JButton menuButton;
+    private javax.swing.JLabel olaLabel;
     private javax.swing.JToggleButton sairButtonSair;
     private javax.swing.JButton verUsuarioButton;
     // End of variables declaration//GEN-END:variables

@@ -26,16 +26,20 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="2" attributes="0">
-                  <Component id="addLivroButtonLivro" alignment="2" pref="309" max="32767" attributes="0"/>
+                  <Component id="addLivroButtonLivro" alignment="2" max="32767" attributes="0"/>
                   <Component id="verLivrosButton" alignment="2" max="32767" attributes="0"/>
                   <Component id="desativarContaButton" alignment="2" max="32767" attributes="0"/>
+                  <Component id="menuLabel" alignment="2" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="logoutButton" min="-2" pref="100" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="logoutButton" min="-2" pref="100" max="-2" attributes="0"/>
+                  <Component id="olaLabel" alignment="0" min="-2" pref="210" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="278" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="adminButton" max="32767" attributes="0"/>
                   <Component id="sairButton" max="32767" attributes="0"/>
@@ -48,14 +52,19 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="adminButton" min="-2" pref="50" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
-              <Component id="addLivroButtonLivro" pref="60" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="adminButton" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="olaLabel" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+              <Component id="menuLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+              <Component id="addLivroButtonLivro" pref="56" max="32767" attributes="0"/>
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-              <Component id="verLivrosButton" pref="60" max="32767" attributes="0"/>
+              <Component id="verLivrosButton" pref="56" max="32767" attributes="0"/>
               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-              <Component id="desativarContaButton" pref="60" max="32767" attributes="0"/>
-              <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
+              <Component id="desativarContaButton" pref="56" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="sairButton" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                   <Component id="logoutButton" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
@@ -113,6 +122,22 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="logoutButtonActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="olaLabel">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Dialog" size="24" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ol&#xe1;, Usuario!!"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="menuLabel">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Dialog" size="24" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="MENU"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

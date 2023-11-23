@@ -29,6 +29,7 @@ public class MenuFrame extends javax.swing.JFrame {
         if (usuario.getAcesso() != 1) {
             remove(adminButton);
         }
+        olaLabel.setText("Olá, " + usuario.getNome().toUpperCase() + "!!");
     }
     
     /**
@@ -46,6 +47,8 @@ public class MenuFrame extends javax.swing.JFrame {
         desativarContaButton = new javax.swing.JButton();
         adminButton = new javax.swing.JButton();
         logoutButton = new javax.swing.JButton();
+        olaLabel = new javax.swing.JLabel();
+        menuLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -91,6 +94,12 @@ public class MenuFrame extends javax.swing.JFrame {
             }
         });
 
+        olaLabel.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        olaLabel.setText("Olá, Usuario!!");
+
+        menuLabel.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        menuLabel.setText("MENU");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -98,14 +107,17 @@ public class MenuFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(146, 146, 146)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(addLivroButtonLivro, javax.swing.GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE)
+                    .addComponent(addLivroButtonLivro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(verLivrosButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(desativarContaButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(desativarContaButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(menuLabel))
                 .addGap(146, 146, 146))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(logoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(logoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(olaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 278, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(adminButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(sairButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -115,14 +127,18 @@ public class MenuFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(adminButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(118, 118, 118)
-                .addComponent(addLivroButtonLivro, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(adminButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(olaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(76, 76, 76)
+                .addComponent(menuLabel)
+                .addGap(29, 29, 29)
+                .addComponent(addLivroButtonLivro, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
                 .addGap(34, 34, 34)
-                .addComponent(verLivrosButton, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+                .addComponent(verLivrosButton, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
                 .addGap(33, 33, 33)
-                .addComponent(desativarContaButton, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
-                .addGap(123, 123, 123)
+                .addComponent(desativarContaButton, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
+                .addGap(119, 119, 119)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(sairButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(logoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -206,6 +222,8 @@ public class MenuFrame extends javax.swing.JFrame {
     private javax.swing.JButton adminButton;
     private javax.swing.JButton desativarContaButton;
     private javax.swing.JButton logoutButton;
+    private javax.swing.JLabel menuLabel;
+    private javax.swing.JLabel olaLabel;
     private javax.swing.JButton sairButton;
     private javax.swing.JToggleButton verLivrosButton;
     // End of variables declaration//GEN-END:variables
