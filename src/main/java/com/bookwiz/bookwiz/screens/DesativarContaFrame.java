@@ -117,7 +117,7 @@ public class DesativarContaFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void desativarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_desativarButtonActionPerformed
-        int dialogResult = JOptionPane.showConfirmDialog(null, usuario.getNome() + ", deseja realmente desativa sua conta?");
+        int dialogResult = JOptionPane.showConfirmDialog(null, usuario.getNome() + ", deseja realmente desativar sua conta?");
         if(dialogResult == JOptionPane.YES_NO_OPTION){
             try {
                 UsuarioDAO usuarioDAO = new UsuarioDAO();
