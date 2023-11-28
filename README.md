@@ -4,6 +4,8 @@ Projeto desenvolvido para a unidade curricular Programação de soluções compu
 ## Tecnologias
 * Java
 * MySQL
+* Maven
+* Decorators
 * Aiven
 * StarUML
 
